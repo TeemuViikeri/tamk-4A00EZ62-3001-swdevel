@@ -1,3 +1,3 @@
-# 4A00EZ61-3002-ecmascript-pohjolainen-jussi
+# 4A00EZ61-3001-ecmascript-viikeri-teemu
 
-Exercises for the course 4A00EZ61-3002 Frontend Development held in TAMK
+Exercises for the course 4A00EZ61-3001 Frontend Development held in TAMK
