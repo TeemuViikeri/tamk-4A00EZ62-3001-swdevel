@@ -1,0 +1,181 @@
+HARJOITUS: Cygwin terminal
+
+Siirry Windowsin hakemistoon "Program Files x86"
+
+cd - change directory
+
+cd /cygdrive/c
+cd Program[TAB]
+cd Program\ Files\ [TAB]      # \ = literal meaning
+
+cd "word word word"
+cd word\ word\ word
+
+ls
+ls -F
+ls -l
+ls -1
+
+ls -1F
+
+drwxr-xr-x  9 jaalto staff   315 2020-08-26 12:29 . 
+drwxr-xr-x 73 jaalto staff  2120 2020-08-25 11:47 ..
+drwxr-xr-x  3 jaalto staff   105 2020-08-23 19:48 admin
+-rwxrwxrwx  1 jaalto staff     9 2020-08-23 19:31 text
+
+KOTIHAKEMISTO
+
+cd                 # back to HOME (~)      ~/public_html/
+pwd              # print working directory
+
+explorer .    # Windows Explorer. (.) = current directory
+
+cd ~
+cd $HOME  # $ = muuttujan lukeminen , HOME = ympäristömuuttujat
+env               # kaikki ympäristömuuttujat
+
+POLUT
+
+cd /cygdrive/c/Temp/testing/ -- absoluuttinen
+cd ../../public_html         -- relatiivinen
+cd /cygdrive/c/Temp/../testing/
+
+KOMENTOJEN SYNTAKSI
+
+<command> [options] [arguments]
+cd
+cd tmp/
+ls
+ls tmp/
+ls -l -F tmp/
+ls -lF tmp/
+ls -Fl tmp/
+
+ls tmp/
+
+cp test.txt    # syntax error, cp = copy
+cp test,xt new.txt
+
+HELP AND MANUAL
+
+cp -h
+cp --help
+cp --verbose --help
+
+man <command t show help>
+man cp
+
+SIVUTUSOHJELMA (manuaalit)
+
+q = quit
+RET = one line forward
+SPC = page forward
+b = back one page
+
+more(1)
+less(1)              --- "less is more"
+
+man less
+/                  - Search forward   (? = backward)
+/RE             - RE = regular expression 
+/exit RET  -  RET = enter
+
+n = next same search forward
+p = previous ....
+
+HARJOITUS: Milllä option komennosta cp(1) voidaan rekursiivisesti 
+kopioida koko hakemisto toiseen paikkaan? Ts. tehdä backup.
+
+man cp
+
+-R, -r, --recursive 
+
+Q: Miksi pitkiä optiota? 
+A: Luettavuuden vuoksi
+
+KOMENTOJEN KÄYTTÖ Ja PARAMETRIT
+
+ls *.txt *.java  tmp/   work/*/doc/
+ls  a*00*.txt
+ls doc/ Document/
+
+ls [dD0-9]oc*/       # Shel metacharacters, [] = class, one character, range 0-9 a-z
+
+ERIKOISMERKIT (välilyönit)
+
+ls /cygdrive/c/Program\ Files\ x86/.....
+
+
+http://example.com/user/doc/This%20Document here 0001 beta.pdf
+
+http://asciitable.com
+ 
+ SUOSITUS:
+     
+this_document_here.pdf
+this-document-here.pdf
+
+ERIKOISMERKIT (literal meaning = \ " )
+
+" "     = Erikoismerkki  \_
+*.txt = \*
+!todo
+
+--------------------------------------------------------
+YHTEENVETO:
+
+- Komentoja on paljon: mv, cp, tree, ls, pwd, mkdir, rmdir, rm
+- Optiot, näitä on paljon. Ks. man(1), --help, -h
+- Jotkin komennot ei seuraa "de facto" standrdia:
+java -cp  "CLASSPATH" ...
+
+---------------------------------------------------------------------
+KOMENTOTULKKI - BASH
+
+cd
+ls -la
+
+cat  ~/.bash_profile      # tai less .... (sivutus)
+cat ~/.bashrc
+
+nano ~/.bash_profile  
+
+[ -f ~/.bashrc ] && . ~/.bashrc
+[ -f ~/.bashrc.git ] && . ~/.bashrc.git
+[ -f ~/.bashrc.hg ] && . ~/.bashrc.hg
+[ -f ~/.bashrc.common ] && . ~/.bashrc.common
+
+--------------------------------
+^X    ^W
+-----------------------------------
+^ = Control + <CHAR>
+
+KÄYTTÄJÄN OMAT KONFIGURAATIOT (~/.bashrc)
+
+nano ~/.bashrc
+
+# ~/.bashrc
+
+# MY -----------------------------------------
+ll ()
+{
+    # "$@" = user's command line arguments
+    ls -l "$@"
+}
+
+# End of file
+---------------------------------------  ^W ^X
+
+cat ~/.bashrc
+. ~/.bashrc  # read file into environment
+
+mkdir ~/tmp/
+ll ~/tmp/
+
+KOTIIN KOKEILTAVAKSI
+
+1. Tutustu manuaalisivuihin
+2. Tutustu less(1) käyttöön
+      a) miten voi merkitä kirjainmerkkejä?
+      b) miten voi palata kirjainmerkeihin
+3. Peruskomennot, kokeile
