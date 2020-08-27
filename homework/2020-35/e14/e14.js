@@ -4,12 +4,14 @@ const readlineSync = require('readline-sync')
 const database = []
 const options = {
   skinny: true,
-  intersectionCharacter: 'O'
+  intersectionCharacter: 'O',
+  columns: [
+    { field: 'id', name: 'Student ID Number' },
+    { field: 'name', name: 'Student Name' }
+  ]
 }
 
 let autoId = 0
-
-const table = asciitable(database, options)
 
 function add () {
   const name = readlineSync.question('May I have student name?\n')
@@ -19,20 +21,18 @@ function add () {
 }
 
 function remove () {
-  const id = readlineSync.question('May I have id?\n')
+  const id = Number(readlineSync.question('May I have id?\n'))
 
   for (let i = 0; i < database.length; i++) {
-    const student = database[i];
-    if (student.id === id) {
+    if (database[i].id === id) {
       database.splice(i, 1)
     }
   }
-
-  console.log(database)
 }
 
 function display () {
-
+  const table = asciitable(database, options)
+  console.log(table)
 }
 
 function main () {
