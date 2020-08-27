@@ -1,0 +1,197 @@
+WEB PAD: Jari Aalto
+Tyhjennetään tunnin jälkeen: kopioi itselle 
+---------------------------------
+OIKEA YLÄKULMA [RATAS / ASETUKSET]
+[] Authorship colors OFF
+Font Type: Monospace
+Language: English
+---------------------------------
+
+YMPÄRISTÖN TEHOKAS KÄYTTÖ
+
+- T1: Editor
+- T2: Versionhalinta / komentoja yleisesti
+- T3: Manuaalisivut
+
+TUTKIKAA, Käykää asentamass Cygwin/Linux
+screen(1)
+
+   T1 T2 T3 T3 ...
+
+NANO
+
+  mkdir temp
+  cd tmp
+  
+  touch new.txt
+  chmod 755 .
+  
+  type -a chmod
+    
+  mkdir nano/
+  cd nano        # ~/tmp/nano/ 
+
+  HARJOITUS: Tee tiedosto, jossa on kaksi riviä, ja useita sanoja
+
+   This is a test file for using nano(1) editor. 
+    I'm trying to learn how to use it.
+    
+    HARJOITUS: Sisennä nämä 4 välilyonnillä, tallenna
+    
+   HARJOTUS: Millä optiolla saa TABin 4:ski 
+
+ man nano                            less(1): / = search   n=next p=prev q=quit
+ nano [option] test.txt
+
+ nano -T 4
+
+12345678
+        *       *Text
+\tText
+
+     -T number, --tabsize=number
+              Set  the  size  (width)  of  a tab to number columns.  The value of number must be
+              greater than 0.  The default value is 8.
+
+    HARJOITUS: sisennyt space-only muodossa
+      
+nano -T 4 -E <file>
+
+OHJELMIEN YLEINEN KONFIGUROINTI ~/.bashrc
+
+     nano ~/.bashrc
+     
+     _[TAB]
+     
+     _nano ()
+     {
+            nano -T 4 -E "$@"
+     } 
+    
+    . ~/.bashrc
+    
+    _nano <file>
+    
+OHJELMIEN KONFIGURAATIOTIEDOSTOT / EDITOR
+
+    man <command>     / = search,  "config"  "init" "rc"
+    
+    HARJOITUS: missä on nano(1) editoring konfiguraatio?
+    
+    nano ~/.nanorc
+    ~/.config/nano/nanorc
+    
+    HARJOITUS: Aseta pysyviksi asetukset: TAB 4, space-only
+    
+ set tabsize 4       #
+    set tabstospaces    # 
+    
+    man nanorc
+   
+ERIKOISTAPAUKSET / OHITA ASETUKSET
+   
+   HARJOITUS: Millä optiolla nano(1) ei käytä mitään
+   konfiguraatiotiedoston asetuksia:
+       
+       nano [option] <file>
+       nano -I <file>
+
+YLEINEN KONFIGURAATIO ONJELMILLE
+
+type -a nano     # PATH
+
+/bin/...
+/usr/bin/nano.exe
+/usr/local/bin/...
+
+/etc/...       # systeemiesetukset
+/etc/nanorc
+~/.nanorc
+
+
+FILES
+       When --rcfile is given, nano will read just the specified file for set-
+       ting its options and syntaxes and key bindings.  Without  that  option,
+       nano  will  read two configuration files: first the system's nanorc (if
+       it exists), and then the user's nanorc (if it exists), either ~/.nanorc
+       or  $XDG_CONFIG_HOME/nano/nanorc or ~/.config/nano/nanorc, whichever is
+       encountered first.  See nanorc(5) for more information on the  possible
+       contents of those files.
+
+NANO EDITORIN PERUSKÄYTTÖ
+
+     Cut: C-k    (^K)
+     Paste: C-u  (^U)
+     
+     Kotitehtävissä on lisää kysymyksiä: näppäimistä ja toiminnoista
+
+VI / VIM (vi improved)      WINDOWS
+
+    HUOM. Ediori poikkeaa kaikista muista. Peruidea on "moodit", joihin
+    mennään sisään ja ulos kun tehdään toimintoja.
+    
+    vi test.txt
+    
+    HARJOITUS: Yritä muokata!
+    
+(i)nsert
+
+    HARJOITUS: Miten lopetetaan insert-moodi?
+    
+      ESC = end mode
+      
+    HARJOITUS: Miten tallennetaan?
+    
+      :w      = write
+      :q      = quit
+      :q!     = quit force
+      :wq  
+    
+HARJOITUS:
+
+  dd = line delete ; d$
+  yy = line copy   ; y$
+
+  copy = y[MOTION]    ; y}  = Kopio kappale oikealle (alaspäin)
+     paste = p
+
+     :q!
+     
+GNU EMACS                       WINDOWS
+
+    emacs test.txt
+    
+    HARJOITUS: Miten tallennan?
+     
+       C-x s
+       C-x C-s
+     
+    HARJOITUS; Miten kopioin alueen (esim. kappaleen)
+    paikasta A, paikkaan B.
+    
+Read-only tiedostot? Vaihda tiedoston asetukset
+
+    test.txt          
+  
+    cd <path>
+    chmod 644 test.txt   # files modes
+  ls -l test.txt
+  
+  -rw-r--r--  1 jaalto staff 11608 2020-08-27 10:57 index.html
+  
+-------------------------------------------------------
+
+
+
+
+
+
+ 
+  
+  
+  
+  
+  
+  
+    
+      
