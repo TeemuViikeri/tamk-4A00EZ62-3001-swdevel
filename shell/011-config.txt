@@ -1,0 +1,18 @@
+1.1 The confirguration file
+
+    A. Where is the configuration file?
+
+    ~/.nanorc
+    $XDG_CON‐FIG_HOME/nano/nanorc
+    ~/.config/nano/nanorc
+
+    B. Configure following settings permanently:
+
+      # Set standard indenting to 4
+      -T 4, --tabsize=4
+
+      # Use only SPACE characters for indentation
+      -E, --tabstospaces
+
+      # Don't wrap text at the end of line
+      -w, --nowrap

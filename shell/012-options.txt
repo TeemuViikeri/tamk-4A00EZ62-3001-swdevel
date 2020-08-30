@@ -1,0 +1,23 @@
+1.2 Create file nano-test.txt and explain command line options
+
+    Explain what each of the option does by quoting manual page:
+
+        nano -E -T 4 -i -I nano-test.txt
+
+    Content:
+
+        File: nano-test.txt
+        Date: YYYY-MM-DD
+        Author: Foo Bar <foo.bar@example.com>
+
+        This is a test file created with nano(1) editor.
+
+        End of file
+
+    -E: "Convert typed tabs to spaces."
+
+    -T 4: "Set the size (width) of a tab to number columns. The value of number must be than 0.  The default value is 8."
+
+    -i: "Automatically  indent  a  newly  created line to the same number of tabs and/or spaces as the previous line (or as the next line if the previous line is the beginning of a paragraph)."
+
+    -I: "Don't look at the system's nanorc nor at the user's nanorc."

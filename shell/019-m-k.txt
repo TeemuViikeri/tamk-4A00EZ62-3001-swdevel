@@ -1,0 +1,3 @@
+1.9 Explain what M-k binding does
+
+    It enables cut to end which means that when you cut text using ^K and cut to end is enabled, the whole line isn't cutted, just the part of the line is cutted where the cursor position is the starting point.
