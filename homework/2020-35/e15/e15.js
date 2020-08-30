@@ -3,12 +3,17 @@ const process = require('process')
 const input = process.argv.slice(2)
 
 let weeks = 0
-let correctNums = 0
+let correctHighScore = 0
 
 function main () {
-  while (validateInput(input)) {
-    checkCorrectNumbers(input)
-    break
+  if (!(validateInput(input))) {
+    return
+  }
+
+  // eslint-disable-next-line no-unmodified-loop-condition
+  while (correctHighScore < 7) {
+    playLotto(input)
+    weeks++
   }
 }
 
@@ -82,7 +87,9 @@ function validateInput (input) {
   return true
 }
 
-function setupNumRows (input, ownNums, lottoNums) {
+function setupOwnRow (input) {
+  const ownNums = []
+
   for (const num of input) {
     if (num < 10) {
       ownNums.push('0' + num)
@@ -91,14 +98,18 @@ function setupNumRows (input, ownNums, lottoNums) {
     }
   }
 
+  return ownNums
+}
+
+function setupLottoRow () {
+  const lottoNums = []
+
   while (lottoNums.length !== 7) {
-    let num = (Math.floor(Math.random() * 40) + 1)
+    let num = (Math.floor(Math.random() * 40) + 1).toString()
     let duplicateFlag = false
 
-    for (const lottoNum of lottoNums) {
-      if (num == lottoNum) {
-        duplicateFlag = true
-      }
+    if (lottoNums.includes(num || '0' + num)) {
+      duplicateFlag = true
     }
 
     if (duplicateFlag) {
@@ -107,26 +118,47 @@ function setupNumRows (input, ownNums, lottoNums) {
 
     if (num < 10) {
       num = '0' + num.toString()
-    } else {
-      num = num.toString()
     }
 
     lottoNums.push(num)
   }
+
+  return lottoNums
 }
 
-function checkCorrectNumbers (input) {
-  const ownNumsFormatted = []
-  const lottoNumsFormatted = []
+function displayTimeTaken () {
+  const time = (weeks / 52).toFixed(2)
 
-  setupNumRows(input, ownNumsFormatted, lottoNumsFormatted)
+  console.log(
+    'You got ' + correctHighScore + ' correct, it took ' + time + ' years!')
+}
+
+function checkCorrectLottoNumbers (ownNums, lottoNums) {
+  let correctNums = 0
+
+  for (const ownNum of ownNums) {
+    if (lottoNums.includes(ownNum)) {
+      correctNums++
+    }
+  }
+
+  if (correctNums > correctHighScore) {
+    correctHighScore++
+    displayTimeTaken()
+  }
+
+  return correctNums
+}
+
+function playLotto (input) {
+  const ownNumsFormatted = setupOwnRow(input)
+  const lottoNumsFormatted = setupLottoRow()
+
+  const correctNums = checkCorrectLottoNumbers(ownNumsFormatted, lottoNumsFormatted)
 
   console.log('[' + ownNumsFormatted.sort().join(', ') + ']')
   console.log('[' + lottoNumsFormatted.sort().join(', ') + ']' +
   ' - correct = ' + correctNums)
-}
-
-function displayTimeTaken () {
 }
 
 main()
