@@ -1,0 +1,17 @@
+2.1 The confirguration file
+
+    A. Where is the configuration file?
+
+    $HOME/.vimrc
+    ~/.vimrc
+    /usr/local/etc/vimrc
+
+    B. Configure following settings permanently:
+
+        # Set standard indenting to 4
+        :set tabstop=4
+        :set ts=4
+
+        # Use only SPACE characters for indentation
+        :set expandtab
+        :set et

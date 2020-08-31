@@ -1,0 +1,14 @@
+2.3 Edit existing file
+
+    Explain used key bindings.
+    Line up all the colons(:) characters:
+
+        File  : test.tmp
+        Date  : YYYY-MM-DD
+        Author: Foo Bar <foo.bar@example.com>
+
+    1. vi test.tmp: open the file with vi editor
+    2. i: insert mode on
+    3. edit the file: line up the colon characters by going to correct lines and columns with arrow keys
+    4. ESC: exit insert mode
+    5. :wq: save the file and exit from vi editor

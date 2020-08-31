@@ -1,0 +1,18 @@
+2.2 Create file vi-test.txt
+
+    Explain used key bindings.
+    Create and save file:
+
+        File: vi-test.txt
+        Date: YYYY-MM-DD
+        Author: Foo Bar <foo.bar@example.com>
+
+        This is a test file created with vi(1) editor.
+
+        End of file
+
+  1. vi vi-test.txt: create vi-test.txt file ja open it with vi editor
+  2. i: insert mode on so the file is open for writing 
+  3. write content to the file
+  4. ESC: exit the insert mode with ESC
+  5. :wq: save the file (:w) and exit the vi editor (:q)

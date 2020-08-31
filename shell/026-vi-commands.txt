@@ -1,0 +1,14 @@
+2.6 Command listing
+
+    Explain used key binding after equal(=) sign:
+
+        beginning of line        = 0
+        end of file              = G
+        deleting a word          = dw
+        deleting a line          = dd, d$
+        deleting a paragraph     = d}, d{
+        Go to beginning of file  = gg, 1G
+        Go to end of file        = G
+        Copying line(s)          = yy
+        Copying paragraph        = y}, y{
+        Turn on/off line numbers = :set nu, :set nonu

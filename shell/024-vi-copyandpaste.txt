@@ -1,0 +1,13 @@
+ 2.4 Copy and paste commands
+
+    Explain used key bindings.
+    Open previous file and use copy and paste:
+
+    This is test file for vi-editor. If saved, all worked ok.
+    This is test file for vi-editor. If saved, all worked ok.
+
+    1. vi <file>: open <file> in a vi editor.
+    2. i: go to insert mode and write a line in insert mode
+    3. yy: copies the line where cursor is on
+    4. p: paste the line on the next line
+    5. :wq: save the file and exit vi editor

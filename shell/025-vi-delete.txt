@@ -1,0 +1,17 @@
+2.5 Delete command
+
+    Explain used key bindings.
+
+    A. Delete the duplicate line added in previous exercise.
+
+    1. vi <file>: open <file> in a vi editor.
+    2. go to the duplicate line with arrow keys
+    3. dd: deletes the line where cursor pointer is on currently
+
+    B: Change sentences of remaining line to read as follows:
+
+        If saved, all worked ok. This is test file for vi-editor.
+    
+    4. i: go to insert mode
+    5. edit the remaining line
+    6. :wq: save the file and exit vi editor
