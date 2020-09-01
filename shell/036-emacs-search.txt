@@ -1,0 +1,16 @@
+3.6 Search and replace
+
+    Explain (mentioning key bindings), to do the following:
+
+        Write programming code (*.java). Use same variable
+        multiple times. Replace the variable name everywhere.
+
+            companyName = "My company";
+            System.out.println("Company" + companyName);
+
+    1. emacs <file>: open file with emacs
+    2. write programming code and use same variable multiple times
+    3. put cursor point to start of the file (if you want to replace all matches that occur in the file)
+    4. M-x replace-string <RET> string <RET> newstring: replace all matched string occurances that exists in the file (from cursor point onwards) with newstring
+    5. C-x C-s: save file
+    6. C-x C-c: exit emacs

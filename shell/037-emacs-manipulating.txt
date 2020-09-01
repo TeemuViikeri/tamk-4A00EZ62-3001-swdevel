@@ -1,0 +1,10 @@
+3.7 Manipulating buffers and windows
+
+    Explain key bindings:
+
+        C-x b   = change to buffer (C-x follows buffer name and then RET)
+        C-x C-b = show buffer list
+
+        C-x 2   = split window in half (copies the current window to split window second buffer)
+        C-x o   = change to other window (the "o" like in: (o)ther)
+        C-x 1   = one window (current buffer)

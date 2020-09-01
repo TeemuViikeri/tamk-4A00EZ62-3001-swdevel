@@ -1,0 +1,27 @@
+3.9 Accessing utilities and help
+
+    First, explain in a sentence or two:
+
+        A. What is a "buffer"
+
+        Buffer is an object that holds text from a file.
+
+        B. What is a "buffer mode"
+
+        Mode where you can switch from buffer ot another.
+
+        C. What is a "window"
+
+        A window is a pane that displays the contents of a single buffer.
+
+    What does the Help key bindings do:
+
+        A. C-h ?: open help command center
+        B. C-h m: open help manual regarding minor modes
+        B. C-h b: open help manual regarding key bindings
+
+    How to run utilities like:
+
+        To play tetris               : M-x tetris
+        To open calendar             : M-x calendar
+        To examine file in hex editor: M-x hexl-mode

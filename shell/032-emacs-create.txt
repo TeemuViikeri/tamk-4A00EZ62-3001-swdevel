@@ -1,0 +1,18 @@
+ 3.2 Create file emacs-test.txt
+
+    Explain used key bindings.
+    Create and save file:
+
+        File: emacs-test.txt
+        Date: YYYY-MM-DD
+        Author: Foo Bar <foo.bar@example.com>
+
+        This is a test file created with emacs(1) editor.
+
+        End of file
+
+    1. emacs emacs-test.txt: create a new file (when no such file name is found from the directory) and open it with emacs
+    2. write content
+    3. C-x C-s: save file
+    4. C-x C-c: exit from emacs editor
+  

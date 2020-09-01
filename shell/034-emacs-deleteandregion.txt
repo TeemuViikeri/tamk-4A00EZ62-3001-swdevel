@@ -1,0 +1,28 @@
+3.4 Delete command and region editing
+
+    Explain used key bindings.
+
+    A. Delete the duplicate line added in previous exercise.
+
+    B: Change sentences of remaining line to read as follows.
+        Try to use "region select" for cut/paste to move words.
+
+        If saved, all worked ok. This is test file for emacs-editor.
+
+    A. 
+    
+    1. emacs emacs-test.txt: open file
+    2. go to correct line
+    3. C-k: delete current line
+    4. C-x C-s: save file
+
+    B. 
+
+    1. go to correct line
+    2. C-SPC: select correct region ("This is test file for emacs-editor.")
+    3. C-w: cut select region
+    4. remove unnecessary whitespace that was left
+    5. go to end of the line after "If saved, all worked ok." and use SPC to make one whitespace.
+    6. C-y: paste
+    7. C-x C-s: save file
+    8. C-x C-c: exit emacs editor

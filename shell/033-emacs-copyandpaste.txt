@@ -1,0 +1,16 @@
+3.3 Copy and paste commands
+
+    Explain used key bindings.
+    Open previous file and use copy and paste:
+
+        This is test file for emacs-editor. If saved, all worked ok.
+        This is test file for emacs-editor. If saved, all worked ok.
+
+    1. emacs emacs-test.txt: open file
+    2. go to correct line
+    3. C-SPC: set mark/set starting position of the region wanted to copy
+    4. move the <cursor> to the end position of the region
+    5. M-w: copy selected region
+    6. C-y: paste copied content to the cursor point
+    7. C-x C-s: save file
+    8. C-x C-c: exit emacs editor

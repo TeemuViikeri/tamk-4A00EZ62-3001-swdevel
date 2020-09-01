@@ -1,0 +1,13 @@
+3.5 Undo
+
+    Explain (mentioning key bindings), to do the following:
+
+        Write line with words. Kill two random words. Undo (back to
+        original sentence).
+
+    1. emacs emacs-test.txt: open file
+    2. go to empty line and write a line with words
+    3. 2x M-d: kills a word from cursor point to the end of word 
+    4. C-x u: undo (repeat)
+    5. C-x C-s: save file
+    6. C-x C-c: exit emacs editor

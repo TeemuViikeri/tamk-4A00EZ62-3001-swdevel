@@ -1,0 +1,40 @@
+3.8 Using files
+
+    Explain in each step briefly by mentioning key bindings),
+    how do you:
+
+        A. Open two files
+
+        B. Display both files in split window view
+
+        C. Edit both files in turn
+
+        D. Copy a line from one buffer (window A) to another
+               buffer (B) in a split window view.
+
+        E. Save both files
+
+    A. 
+    
+    emacs <file1> <file2>
+
+    (B. C-x 2 or C-x 3, already split by first command)
+
+    C. 
+
+    1. edit <file1>
+    2. C-x o
+    3. edit <file2>
+
+    D. 
+
+    1. C-a
+    2. C-SPC
+    3. C-n
+    4. M-w
+    5. C-x o
+    6. C-y
+
+    E. 
+
+    C-x s
