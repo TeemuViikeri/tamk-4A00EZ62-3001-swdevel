@@ -1,2 +1,1 @@
-# VC
-This is a repository for Version Control course files: lectures, text files, etc.
+This is a repository for course's 4A00EZ61-3001 Frontend-kehitys subtopics databases, version control, testing etc.
