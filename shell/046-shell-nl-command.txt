@@ -1,0 +1,23 @@
+4.6 Using cut(1) command
+
+    Create following database. How do you extract with one
+    command fields 3 and 1. Fields are separated by commas.
+
+    Mike Johnson, 4 Sea Drive, New York
+    Dan Doyle, 21th street, Washington
+    Ed Madison, 3 Andy Square, Boston
+
+    =>
+
+    Mike Johnson, New York
+    Dan Doyle, Washington
+    Ed Madison, Boston
+
+
+    $ cat test-database.txt
+    Mike Johnson, 4 Sea Drive, New York
+    Dan Doyle, 21th street, Washington
+    Ed Madison, 3 Andy Square, Boston
+    CTRL+D (to exit cat input mode)
+
+    cut -d, -f1,3 test-database.txt
