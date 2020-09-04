@@ -1,0 +1,15 @@
+4.8 Using nl(1) command
+
+    Explain how to display file with line numbers so that
+    every line contains a line number. Including blank lines.
+
+    $ cat > test-nl.txt
+    This is the first
+
+    This the second line after a blank line.
+    CTRL+D
+
+    $ nl -b a test-nl.txt
+     1  This is the first
+     2
+     3  This the second line after a blank line.
