@@ -1,0 +1,24 @@
+4.5 Basic commands
+
+    Explain in a sentence of two what each of the commands do:
+
+        cut
+
+        Prints parts of lines from each file used with the cut command. Command argument(s) is necessary to specify what part is extracted.
+
+        head
+
+        Prints first 10 lines of each file given to the command. If more than one file given, the file name is preceded as a header to each print.
+
+        tail
+
+        Same as before but prints last 10 lines insted of first 10 lines. 
+
+        sort
+
+        Sorts given file to a wanted order. By default sorting happens alphabetically using first letter of each line.
+
+        uniq
+
+        Gives information to the user about adjacent matching/repeated lines. With options you can edit the output regarding the repeated lines.
+        
