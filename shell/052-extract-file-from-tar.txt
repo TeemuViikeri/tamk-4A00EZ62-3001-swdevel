@@ -1,0 +1,13 @@
+5.2 Extracting one file from TAR archive
+
+    From previous exercise "archive.tar.gz", extract file:
+
+            project/README
+
+        What is is the combination of commands to extract just one
+        file from a TAR archive?
+
+        NOTE: you are not allowed to extract *all* the files on
+        disk, then picking one, and delete the rest of the files.
+
+    tar -xf archive.tar.gz project/README
