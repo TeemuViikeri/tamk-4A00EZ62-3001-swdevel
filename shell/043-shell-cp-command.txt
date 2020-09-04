@@ -1,0 +1,9 @@
+4.3 The cp command
+
+    Quote from manaual page what is the purpose of options
+    '-v', '-u', '-p' and '-r' in cp(1) command.
+
+    -v, --verbose: explain what is being done
+    -u, --update:  copy only when the SOURCE file is newer than the destination file or when the destination file is missing
+    -p, --preserve[=ATTR_LIST]: preserve the specified attributes (default: mode,ownership,timestamps), if possible additional attributes:  context, links, xattr, all
+    -R, -r, --recursive: copy directories recursively
