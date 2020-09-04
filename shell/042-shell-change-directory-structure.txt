@@ -1,0 +1,51 @@
+4.2 Change directory structure under $HOME/tmp/test2
+
+    Intial setup:
+
+        dir1/
+        | 1.txt
+        | 2.txt
+        |
+        +-- dir2/
+            | 1.tmp
+            | 2.tmp
+            |
+            +-- dir3/
+                +- 1.lst
+                +- 2.lst
+
+    cd tmp
+    mkdir test2
+    cd test2
+    mkdir dir1
+    cd dir1
+    touch 1.txt 2.txt
+    mkdir dir2
+    cd dir2
+    touch 1.tmp 2.tmp
+    mkdir dir3
+    cd dir3
+    touch 1.lst 2.lst
+
+    After some commands, the result:
+
+        dir1/
+        | 1.lst
+        | 2.txt
+        |
+        +-- dir2
+            | 1.txt
+            | 2.lst
+            |
+            +-- dir3/
+                +- 1.tmp
+                +- 2.tmp
+
+    mv 1.lst ../..
+    mv 2.lst ..
+    cd ..
+    mv 1.tmp dir3
+    mv 2.tmp dir3
+    cd ..
+    mv 1.txt dir2
+    cd 
