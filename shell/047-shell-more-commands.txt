@@ -1,0 +1,15 @@
+4.7 More commands
+
+    Explain in a sentence of two what each of the commands do:
+
+        nl
+
+        Prints out file content with line numbers. By default, nl command doesn't number empty lines.
+
+        uniq
+
+        Gives information to the user about adjacent matching/repeated lines. With options you can edit the output regarding the repeated lines.
+
+        paste
+
+        Merges files by lines horizontally. Merged lines are separeted by tab by default.
