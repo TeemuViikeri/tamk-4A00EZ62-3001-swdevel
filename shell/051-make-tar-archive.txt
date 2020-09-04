@@ -1,0 +1,50 @@
+5.1 Making a TAR archive
+
+    List coommands used.
+
+    Make following directory structure and make a traditional
+    "archive.tar.gz" from all directories and files:
+
+        project/
+        | README
+        |
+        +- doc/
+        |  manual.txt
+        +- src/
+           Main.java
+
+    Please check the archive. It *MUST* not contain absolute
+    paths, but only reltive paths like:
+
+        project/README
+        project/doc/manual.txt
+        project/src/Main.java
+
+    Incorrect archive with absolute paths:
+
+        /home/user/project/README
+        /home/user/project/doc/manual.txt
+        /home/user/project/src/Main.java
+
+    cd tmp
+    mkdir project
+    cd project
+    touch README
+    mkdir doc
+    mkdir src
+    cd doc
+    touch manual.txt
+    cd ..
+    cd src
+    touch Main.java
+    cd ../..
+
+    tar -cf archive.tar.gz project
+
+    $ tar -tvf archive.tar.gz
+    drwxr-xr-x Teme/Teme         0 2020-09-04 14:46 project/
+    drwxr-xr-x Teme/Teme         0 2020-09-04 14:34 project/doc/
+    -rw-r--r-- Teme/Teme         0 2020-09-04 14:34 project/doc/manual.txt
+    -rw-r--r-- Teme/Teme         0 2020-09-04 14:34 project/README
+    drwxr-xr-x Teme/Teme         0 2020-09-04 14:34 project/src/
+    -rw-r--r-- Teme/Teme         0 2020-09-04 14:34 project/src/Main.java
