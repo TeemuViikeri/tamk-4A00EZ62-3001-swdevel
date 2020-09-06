@@ -1,0 +1,47 @@
+1.1 Making a patch file using diff(1) command
+
+    https://en.wikipedia.org/wiki/Diff_utility
+    https://en.wikipedia.org/wiki/Patch_(Unix)
+    https://en.wikipedia.org/wiki/Patch_(computing)
+    https://www.gnu.org/software/diffutils/manual/html_node/Invoking-diff.html#Invoking-diff
+    https://www.gnu.org/software/diffutils/manual/html_node/Invoking-patch.html#Invoking-patch
+
+    NOTE: Always use option --unified or -u with diff(1).
+    This makes it posssible to use --fuzz option with patch(1). See
+    https://www.gnu.org/software/diffutils/manual/html_node/Inexact.html
+
+    $HOME/tmp/
+     |
+     +-- project1/
+     |   |
+     |   +-- src/
+     |       One.java
+     |
+     +-- project2/
+         |
+         +-- src/
+             Two.java
+
+    - Copy current file One.java under name One.java.orig
+
+    cp One.java One.java.orig 
+
+    - Change One.java. The file is now *ahead* of saved *.orig
+      file.
+
+    vim One.java --> change
+
+    - Take a diff between One.java.orig and One.java and save it
+      to file:
+
+            One.java.patch
+
+    diff -u *.orig One.java > One.java.patch
+
+    You have three files:
+
+        One.java.orig         Original
+        One.java              Modified
+        One.java.patch        Difference i.e. "The Patch"
+
+    
