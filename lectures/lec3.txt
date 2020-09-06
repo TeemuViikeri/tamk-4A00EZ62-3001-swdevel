@@ -1,0 +1,146 @@
+WEB PAD: Jari Aalto
+Tyhjennetään tunnin jälkeen: kopioi itselle 
+---------------------------------
+OIKEA YLÄKULMA [RATAS / ASETUKSET]
+[] Authorship colors OFF
+Font Type: Monospace
+Language: English
+---------------------------------
+
+GITHUBIN KÄYTTÖÖNOTTO
+
+Ks. kotisivu: 2.1 > Github > create repo
+
+1. Rekisteröi itsesi Githubiin
+
+2. Luo repositoryt, tyyppi: private
+
+tamk-4A00EZ62-3001-swdevel - jaalto-tamk
+tamk-4A00EZ62-3001-database - samikojo-tuni
+tamk-4A00EZ62-3001-backend - pohjus
+
+3. Lisää opettajat "Manage repo" > Add Collaborator:
+   Ks. edellä, esim "jaalto-tamk"
+
+TARKISTUS: Muutaman minuutin kuuttua
+
+4. Autentikointi. Lisää Cygwin:iin tiedosto ~/.netrc
+   Ks. ohjeet kotisivun kohdassa 2.1 > Github / briefly (1.C)
+ 
+git config --global credential.helper 'cache --timeout=14400'
+
+nano ~/.netrc
+
+    machine github.com
+    login USERNAME
+    password PASSWORD
+ 
+5. Lataa Githubin repository käyttäen <URL>
+
+    # https://github.com/jaalto-tamk/tamk-4A00EZ62-3002-swdevel.git
+    git clone <URL> [DIR]
+
+    # Lataa tiettyyn hakemistoon [DIR]. Käytä *.git päätettä,
+    # jotta muistat, että kyseessä on versionhallinnan hakemisto
+    git clone <URL> backend-vc.git
+    
+    mv  tamk-4A00EZ62-3002-swdevel backend-vc.git
+    
+    backend-vc.git/
+    project.svn/
+    project.hg/
+ 
+6. Käyttö (local; wc = working copy)
+
+   cd backend-vc.git
+   ls -la
+
+   # repon konfiguraatiotiedosto
+   cat .git/config
+
+ [core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        ignorecase = true
+[remote "origin"]
+        url = https://github.com/IkuinenPadawan/tamk-4A00EZ62-3001-swdevel.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+        remote = origin
+        merge = refs/heads/master
+
+
+7. Lue projektirkenn REPOON (WC; local working copy)
+
+- Ks. 1.1 > return instrctions
+- Jokaisessa hakemistossa tulee olla yksi tiedosto:
+    
+  shell/011-nano-config.txt
+  vc/011-rcs-import.txt
+  perl/011-variables.txt
+  testing/report.pdf
+  testing/unit/README.txt
+  
+  explorer .
+  tree
+  
+  git status
+	•	 
+8. Projektirakenne ja import (to Github)
+
+# Ks. 2.1 > Github > briefly
+git config --global user.name "FirstName LastName"
+git config --global user.email "me@example.com"
+
+# Tiedostojen käsittelyssä on kaksi vaihetta:
+# (1) add "index", todo-lista
+# (2) commit, vie versionhallintaan
+
+ls -la
+git add .
+git commit
+
+# Viestiksi
+Initial import
+
+
+
+# vi-editor: (i)insert, ESC mode end, write+quit  :wq
+# Use nano(1)
+
+git config --global core.editor "nano" 
+
+
+--------------------------------------- EDITORI NÄKYMÄ
+Initial commit
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#       new file:   perl/011-variables.txt
+#       new file:   shell/011-nano-config.txt
+#       new file:   testing/report.pdf
+#       new file:   testing/unit/README.txt
+#       new file:   vc/011-rcs-import.txt
+#
+
+# Projektin tapahtumat
+
+git log
+
+# import to Github (remote "origin", vrt .git/config)
+
+git push origin master   # Vain yhden kerran
+
+YHTEENVETO KOTITEHTÄVIEN TEKEMISESTÄ
+
+1. luo tiedosto
+2. Lisää Gitin: git add <file> + git commit
+3. Työnnä Githubiin: git push
+4. HUOM: jokainen tehtävä on erillinen commit

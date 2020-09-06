@@ -1,0 +1,531 @@
+WEB PAD: Jari Aalto
+Tyhjennetään tunnin jälkeen: kopioi itselle 
+---------------------------------
+OIKEA YLÄKULMA [RATAS / ASETUKSET]
+[] Authorship colors OFF
+Font Type: Monospace
+Language: English
+---------------------------------
+
+LÄSNÄOLO
+
+1 Färm Jennina
+1 Hietala Aleksi
+1 Häkkinen Tommi
+1 Kallioinen Niklas
+1 Kanto Jussi
+1 Kirsi Joonas
+Kolppanen Aleksi
+1 Koski Jani
+1 Kukkula Leevi
+1 Melentjeff Juuso
+1 Mikkola Marjut
+1 Muikku Aleksi
+1 Mustonen Martti
+1 Niittymäki Eetu
+1 Puukari Elias
+1 Pynnönen Aleksi
+1 Pääjärvi Lauri
+1 Sallinen Erno
+1 Salminen Toni
+1 Salonen Terhi
+1 Sepänmaa Hanna
+1 Viikeri Teemu
+1 Waris Riku
+1 Yliluoma Matias
+1 Äyräväinen Tuuli
+
+
+DIFF PATCH
+
+http://www.sf.net/projects/expat
+http://sourceforge.net/projects/expat/fil
+pananes/expat/
+
+2.0.0
+2.0.1
+
+  mkdir -p ~/tmp/expat
+  cd ~/tmp/expat
+
+  tar -xf expat-2.0.0.tar.gz
+  tar -xf expat-2.0.1.tar.gz
+  
+  
+  $HOME
+  |
+  +--tmp/
+     |
+     +-- expat/
+         |
+         +-- expat-2.0.0/
+         |
+         +-- expat-2.0.1/
+
+- Kysymys: Mitä on tapahtunut kahden julkaisun välillä?
+  Vastaus: otetaan diff-listaus rekursiivisesti kaikista
+
+  cd ~/tmp/expat
+
+  diff -r -u  expat-2.0.0/ expat-2.0.1/ > expat.patch
+
+- Tarkastellaan eroja:
+
+  less expat.patch                     (q=quit, SPACE = page down)
+
+
+hunk = @@
+
+diff -r -u expat-2.0.0/amiga/expat_lib.c expat-2.0.1/amiga/expat_lib.c
+--- expat-2.0.0/amiga/expat_lib.c       2005-12-27 17:48:13.000000000 +0200
++++ expat-2.0.1/amiga/expat_lib.c       2007-06-03 17:55:49.000000000 +0300
+@@ -1,5 +1,5 @@
+ /*
+-** Copyright (c) 2001-2005 Expat maintainers.
++** Copyright (c) 2001-2007 Expat maintainers.
+ **
+ ** Permission is hereby granted, free of charge, to any person obtaining
+ ** a copy of this software and associated documentation files (the
+@@ -27,8 +27,8 @@
+ #define LIBNAME                "expat.library"
+ #define LIBPRI         0
+ #define VERSION                4
+-#define REVISION       0
+-#define VSTRING                "expat.library 4.0 (27.12.2005)"  /* dd.mm.yyyy */
++#define REVISION       2
++#define VSTRING                "expat.library 4.2 (2.6.2007)"  /* dd.mm.yyyy */
+
+
+ static const char* __attribute__((used)) verstag = "\0$VER: " VSTRING;
+diff -r -u expat-2.0.0/amiga/expat_vectors.c expat-2.0.1/amiga/expat_vectors.c
+--- expat-2.0.0/amiga/expat_vectors.c   2005-12-24 08:39:56.000000000 +0200
++++ expat-2.0.1/amiga/expat_vectors.c   2007-06-03 17:54:25.000000000 +0300
+@@ -1,5 +1,5 @@
+ /*
+-** Copyright (c) 2001-2005 Expat maintainers.
++** Copyright (c) 2001-2007 Expat maintainers.
+ **
+ ** Permission is hereby granted, free of charge, to any person obtaining
+ ** a copy of this software and associated documentation files (the
+diff -r -u expat-2.0.0/amiga/include/libraries/expat.h expat-2.0.1/amiga/include/libraries/expat.h
+--- expat-2.0.0/amiga/include/libraries/expat.h 2005-12-30 06:19:05.000000000 +0200
++++ expat-2.0.1/amiga/include/libraries/expat.h 2007-06-03 17:53:24.000000000 +0300
+@@ -2,7 +2,7 @@
+ #define LIBRARIES_EXPAT_H
+
+ /*
+-** Copyright (c) 2001-2005 Expat maintainers.
++** Copyright (c) 2001-2007 Expat maintainers.
+ **
+ ** Permission is hereby granted, free of charge, to any person obtaining
+ ** a copy of this software and associated documentation files (the
+
+
+HARJOITTELU: PATCH & DIFF
+
+cd ~/tmp/
+mkdir diffpatch/
+cd diffpatch/
+
+1. Kirjoita README + tallenna
+
+# Google: Lore Lipsum
+nano README
+
+2. Kopio
+
+cp README.txt README.txt.orig
+cp README README.orig
+
+3. Editoi muutos README
+
+README.orig
+README
+
+5. Generoi patch
+
+diff -u README.txt.orig README.txt > README.txt.patch
+
+--- README.txt  2020-09-03 12:58:19.670909900 +0300
++++ README.txt.orig     2020-09-03 12:57:50.126668900 +0300
+@@ -1,3 +1 @@
+-START OF FILE
+ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+-ÉND OF FILE
+
+7. Downgrade - Palauta README takaisin entiseen
+
+Käyttämällä *.patch tiedostoa
+
+README.txt   (= README.txt.orig)
+README.txt.patch
+
+patch [option] ....
+
+
+patch -b README.orig  README.patch
+patch -R < README.patch 
+
+     -R  or  --reverse
+          Assume  that  this  patch was created with the old and new files swapped.
+          (Yes, I'm afraid that does happen occasionally, human nature  being  what
+          it  is.)   patch  attempts  to  swap each hunk around before applying it.
+          Rejects come out in the swapped format.  The -R option does not work with
+          ed  diff  scripts  because there is too little information to reconstruct
+          the reverse operation.
+
+
+8. Upgrade - Tee tasonnosto README tiedostolle 
+   (normaali "file patching") 
+   
+<komento>
+patch -N < README.txt.patch
+
+       -N  or  --forward
+          When a patch does not apply, patch usually checks if 
+          the patch looks like
+          it has been reversed.  The --forward option prevents that.  
+          See also -R.
+
+
+9. PATCH ja hakemistoviittauket: Muuta README.txt.patch
+
+patch -p4 < README.txt.patch
+patch -p1 < README.txt.patch !!!?!!!
+ 
+--- tmp/README.txt  2020-09-03 12:58:19.670909900 +0300
++++ tmp/README.txt.orig     2020-09-03 12:57:50.126668900 +0300
+
+       -pnum  or  --strip=num
+          Strip  the  smallest prefix containing num leading slashes from each file
+          name found in the patch file.  A sequence of one or more adjacent sla
+          is  counted as a single slash.  This controls how file names found in the
+          patch file are treated, in case you keep your files in a different direc-
+          tory  than the person who sent out the patch.  For example, supposing the
+          file name in the patch file was
+VERSIONHALLINNAN PERUSTEET: RCS
+
+1. Perustetaan projekti (hakemisto)
+
+# Luo hakemisto
+mkdir ~/tmp/vc-rcs/
+cd ~/tmp/vc-rcs/
+
+# Luo rakenne, ts. RCS/ hakemisto
+mkdir RCS/
+
+<project>
+| README
++- RCS/
+
+2. Editoidaan projektin tiedostoja
+
+# Luo tiedosto, tallenna
+nano README
+
+3. Peruskomennot
+
+ci <file> - check in REPO, commit 
+co <file> - check out REPO
+rcs <file> - admin REPO
+rlog <file> - history of revsions
+rcsdiff <file> - differences between revisions
+
+4. Viedään versionhalliin (REPO)
+
+Mac: ssh shell.tamk.fi "homebrew" package manager
+
+ci <file>
+ci README
+> Project description file
+> .
+1.1
+
+** YLEINEN KUVAUS **
+> [viesti: 1. Kuvaus tiedostolle]
+(... description ...)
+"." END
+
+ls -la
+tree
+ls -laR
+
+<project>
+| README
++- RCS/README,v    # ci(1)
+
+co README
+ls -la
+-r--r--r
+ |
+ owner, w = write
+
+co -l README
+-rw-r--r
+
+nano README
+
+ci -l README
+> Add new paragraph.
+> Change ....
+> Correct ...
+> Delete ..
+> Modify
+
+ls -la
+-rw--r--w
+
+TEHTÄVÄ: Tee README revisioon 1.5 saakka muutoksia
+
+5. Historian tarkasteleminen
+
+rlog README
+RCS file: RCS/README,v
+Working file: README
+head: 1.5
+branch:
+locks: strict
+        DeGothia: 1.5
+access list:
+symbolic names:
+keyword substitution: kv
+total revisions: 5;     selected revisions: 5
+description:
+initial.
+----------------------------
+revision 1.5    locked by: DeGothia;
+date: 2020/09/03 10:59:20;  author: DeGothia;  state: Exp;  lines: +1 -0
+Lorem overload
+----------------------------
+revision 1.4
+date: 2020/09/03 10:58:54;  author: DeGothia;  state: Exp;  lines: +1 -0
+Add Lorems
+----------------------------
+revision 1.3
+date: 2020/09/03 10:58:32;  author: DeGothia;  state: Exp;  lines: +2 -0
+Add new line
+----------------------------
+revision 1.2
+date: 2020/09/03 10:55:40;  author: DeGothia;  state: Exp;  lines: +1 -0
+Add new paragraph
+----------------------------
+revision 1.1
+date: 2020/09/03 10:45:28;  author: DeGothia;  state: Exp;
+Initial revision
+=============================================================================
+
+Tässä on toimivat ohjeet RCS:n asentamiseen Macille, jos joku muu kysyy ->
+https://brewinstall.org/Install-rcs-on-Mac-with-Brew/
+
+HARJOITUS: Näytä erot 1.4 ja 1.5 välillä
+
+<komento tähän>
+rcsdiff -u -r1.4 -r1.5 README > README--1.4-1.5.patch
+
+<erolistaus tähän>
+--- README      2020/09/03 10:58:57     1.4
++++ README      2020/09/03 10:59:29     1.5
+@@ -1,2 +1,2 @@
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+-#ENDMERIGHTNOW
++#ENDMERIGHTNOW!
+
+less RCS/README,v   (q = quit)
+
+YMPÄRISTÖMUUTTUJAT (vrt. Shell-luennot alussa)
+
+env                        # näytä kaikki muuttujat
+export LOGNAME="jaalto"    # Vrt. ~/.bashrc
+
+GIT VERSIONHALLINTA
+
+Manuaalisivut ja komennot
+
+nano(1)
+man nano
+
+git
+git [option] <subcommand> <sub options>
+
+
+
+SYNOPSIS
+       git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+man git-commit
+
+NAME
+       git-commit - Record changes to the repository
+
+SYNOPSIS
+       git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+                  [--dry-run] [(-c | -C | --fixup | --squash) <commit>]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [-S[<keyid>]] [--] [<file>...]
+
+
+GIT REPOSITORYN LUONTI
+
+mkdir ~/tmp/vc-git/
+cd ~/tmp/vc-git/
+
+git init
+
+<project>
+| 
++- .git/
+
+GIT VERSIONHALLINNAN PERUSKÄYTTÖ
+
+# Kirjoita, tallenna
+nano README
+
+# Lisää versionhallintaan ts. repositoryyn
+# (1) add (ks. luento "index"). todo-lista
+# (2) commit
+
+git add README
+git commit
+<SHA1 .. A234B234>
+
+# Huomautus eri verionhallin
+# Revision: 1.1, 1.2, 1.2 (RCS)
+# Git: <SHA1>, <SHA1>, HEAD, HEAD~1, HEAD~2, <SHA1>~N
+
+HARJOITUS: Tee README tiedostosta 5 revisiota (5 commits)
+
+git log README
+
+commit 5310305cd576260bc1463656fc674dddf848cf1f (HEAD -> master)
+Author: iskela45 <iskela45@gmail.com>
+Date:   Thu Sep 3 14:51:36 2020 +0300
+
+    4
+
+commit b434f81412c45a6fe14fad31c65db3399584c9a6
+Author: iskela45 <iskela45@gmail.com>
+Date:   Thu Sep 3 14:51:27 2020 +0300
+
+    4
+
+commit cf58dfaecfd131564953e8dbc52a5963f7e95a3b
+Author: iskela45 <iskela45@gmail.com>
+Date:   Thu Sep 3 14:51:14 2020 +0300
+
+    3
+
+commit 12255a9e5f7b165fb9d0fee69a511e9f84354408
+Author: iskela45 <iskela45@gmail.com>
+Date:   Thu Sep 3 14:51:06 2020 +0300
+
+    2
+
+commit c8da52739cea99c52b023c440d532fba0b7174db
+Author: iskela45 <iskela45@gmail.com>
+Date:   Thu Sep 3 14:50:42 2020 +0300
+
+    1
+
+commit 94aeedc905ea5fc968890e4254d29fc6ae528058
+Author: iskela45 <iskela45@gmail.com>
+Date:   Thu Sep 3 14:40:47 2020 +0300
+
+    added readme
+
+HARJOITUS: Miten saat eron kahden commitin välillä?
+
+<vastaus: komento>
+
+git diff 5480 HEAD
+git diff HEAD~2 HEAD~1
+
+<listaus>
+diff --git a/README b/README
+index e69de29..c47213d 100644
+--- a/README
++++ b/README
+@@ -0,0 +1,3 @@
++1
++2
++
+
+Manuaalisivu: man git-diff
+
+SYNOPSIS
+       git diff [options] [<commit>] [--] [<path>...]
+       git diff [options] --cached [<commit>] [--] [<path>...]
+       git diff [options] <commit> <commit> [--] [<path>...]
+       git diff [options] <blob> <blob>
+       git diff [options] [--no-index] [--] <path> <path>
+
+
+       --word-diff[=<mode>]
+           Show a word diff, using the <mode> to delimit changed words. By default,
+           words are delimited by whitespace; see --word-diff-regex below. The
+           <mode> defaults to plain, and must be one of:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
