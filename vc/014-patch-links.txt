@@ -1,0 +1,9 @@
+1.4 Internet and patch discussions (code reviews)
+
+    Find 3 examples of patches in some software development
+    project (Open Source). List links to the discussion forums
+    where the patches are reviewed:
+
+    Link 1: https://lkml.org/lkml/2020/9/13/162
+    Link 2: https://lists.linuxfoundation.org/pipermail/containers/2020-August/042016.html
+    Link 3: https://patchwork.kernel.org/patch/11770935/
