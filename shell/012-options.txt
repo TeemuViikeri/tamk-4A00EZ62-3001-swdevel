@@ -21,3 +21,8 @@
     -i: "Automatically  indent  a  newly  created line to the same number of tabs and/or spaces as the previous line (or as the next line if the previous line is the beginning of a paragraph)."
 
     -I: "Don't look at the system's nanorc nor at the user's nanorc."
+
+    1. nano -E -T 4 -i -I nano-test.txt
+    2. create file content
+    3. save: C-o
+    4. exit: C-x 
