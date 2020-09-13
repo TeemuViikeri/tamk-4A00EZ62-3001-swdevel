@@ -1,0 +1,14 @@
+1.2 Content of a patch file
+
+    Explain the syntax of the *unified* patch file format: always
+    use "-u" option from diff(1). QUESTION: What do each of the the lines
+    mean and what are the numberd next to "@@":
+
+
+        --- One.java.orig   : the original file
+        +++ One.java        : the new file
+        @@ -NN,N +NN,N @@   : data between "@@" tells metadata about changes in files (aka hunks); 
+                                -NN,N: starting line (NN), separator (,) and how many lines included from the original file
+                                +NN,N: starting line (NN), separator (,) and how many lines included from the new file
+        +                   : a new line was added here compared to the original file
+        -                   : a line was removed here ompared to the original
