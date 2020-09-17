@@ -1,0 +1,43 @@
+2.5 Managing locks and file permissions
+
+    RCS uses locks to prevent others from editing the files.
+    Complete following exercise in project1
+
+    - Check out One.java
+
+    co -l One.java
+
+    - Modify file One.java
+
+    vim One.java --> edit
+
+    ... and you decide to throw away changes and start over
+
+    The problem you are facing is that the file has already been
+    checked out and locked to you.
+
+    The steps to start over are:
+
+    (1) breaking out the lock i.e. removing the lock
+
+    rcs -u One.java
+
+    RCS file: RCS/One.java,v
+    1.5 unlocked
+    done
+
+    (2) removing the modified file from current work directory
+
+    rm One.java
+
+    (3) checking out the original file for editing (start from fresh)
+
+    co -l One.java
+
+    (4) Making a change (correct this time)
+
+    vim One.java --> edit
+
+    (5) committing new revision to the version control tree.
+
+    ci One.java
