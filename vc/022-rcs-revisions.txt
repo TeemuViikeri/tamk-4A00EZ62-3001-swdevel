@@ -1,0 +1,26 @@
+2.2 Making revisions
+
+    Make at least 5 separate *revisions* for each project, so that
+    the final revisions in each project reaches at least 1.5.
+
+    cd project1/src/
+    co -l One.java
+    vim One.java --> edit (rev1.2)
+    ci -l One.java
+    vim One.java --> edit (rev1.3)
+    ci -l One.java
+    vim One.java --> edit (rev1.4)
+    ci -l One.java
+    vim One.java --> edit (rev1.5)
+    ci -l One.java
+
+    cd ../../project2/src/
+    co -l Two.java
+    vim Two.java --> edit (rev1.2)
+    ci -l Two.java
+    vim Two.java --> edit (rev1.3)
+    ci -l Two.java
+    vim Two.java --> edit (rev1.4)
+    ci -l Two.java
+    vim Two.java --> edit (rev1.5)
+    ci -l Two.java
