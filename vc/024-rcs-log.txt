@@ -1,0 +1,34 @@
+2.4 Log
+
+    Display log from file One.java between revisionns 1.1 and 1.3
+    in project2.
+
+    cd ~/tmp/project1/src
+    rlog -r1.1:1.3 One.java
+
+    RCS file: RCS/One.java,v
+    Working file: One.java
+    head: 1.5
+    branch:
+    locks: strict
+            Teme: 1.5
+    access list:
+    symbolic names:
+    keyword substitution: kv
+    total revisions: 5;     selected revisions: 3
+    description:
+    Add One.java to revision control.
+    ----------------------------
+    revision 1.3
+    date: 2020/09/17 07:42:33;  author: Teme;  state: Exp;  lines: +1 -0
+    Add second edit after first edit.
+    ----------------------------
+    revision 1.2
+    date: 2020/09/17 07:39:30;  author: Teme;  state: Exp;  lines: +1 -0
+    Add first edit tosrc/ffffOne.java.
+    ----------------------------
+    revision 1.1
+    date: 2020/09/17 07:06:50;  author: Teme;  state: Exp;
+    *** empty log message ***
+    =============================================================================
+  
