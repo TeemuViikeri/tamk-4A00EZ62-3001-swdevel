@@ -1,0 +1,46 @@
+3.1 Starting Git
+
+    http://git-scm.org
+
+    Explain what is need to get started with Git. Where is the
+    configuration file? How to use it? Do the following:
+
+    What is needed to get started with Git:
+    1. Install Git
+    2. Setup Git 
+        a) set up identity (username and email address): git config --global user.name "John Doe" & git config --global user.email johndoe@example.com
+        b) set up editor you want to use with Git: git config --global core.editor emacs
+    3. Initialize a git repository to an existing directory with git --init
+       OR
+       Clone an existing repository with git clone <url>
+    4. Start commiting
+
+    Git configuration file is stored in three different places:
+    1. The system level configuration file: [path]/etc/gitconfig (Unix) or C:\ProgramData\Git\config (Windows)
+    2. The user level configuration file: ~/.gitconfig, ~/.config/git/config (Unix) or C:\Users\<user>\.gitconfig
+    3. Configuration file in Git directory: .git/config
+    
+    You can configurate different settings into the configuration files with key=value pairs. You can check configuration settings with git config --list.
+
+    A. Define in configuration file: your "name" and "email".
+
+    1. git config --global user.name "Teemu Viikeri"
+    2. git config --global user.email teemu.viikeri@tuni.fi
+
+    B. Add parameter "excludesfile" and point it to ~/.gitignore.
+        In ~/.gitignore add common file wildcards to ignore, like
+        Java's *.class files etc.
+
+    git config --global core.excludesfile ~/.gitignore
+
+    C. Add coupe of aliases to configuration file to use git more
+        easily. Define following aliases:
+
+        b  = branch | git config --global alias.b  branch
+        ci = commit | git config --global alias.ci  commit
+        co = checkout | git config --global alias.co  checkout
+        cp = cherry-pick | git config --global alias.cp  cherry-pick
+        st = status --short --branch | git config --global alias.st  status --short --branch
+
+        # Edit last commit message (only before push command!)
+        edit = git commit --amend | git config --global alias.edit  git commit --amend
