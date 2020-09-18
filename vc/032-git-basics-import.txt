@@ -1,0 +1,25 @@
+3.2 Import a project into Git
+
+    Create project and import it into repository as
+    a *one* commit.
+
+    project.git/
+    |
+    +-- doc/
+    |   doc.txt
+    |   test.rtf
+    |
+    +-- src/
+    |    Program.java       Uses Class1, Class2
+    |    Class1.java
+    |    Class2.java
+    |
+    +-- web/                Web pages of project
+        | index.html
+        +-- pic/
+            image.jpg 
+
+    1. create project
+    2. git init in project.git
+    3. git add .
+    4. git commit -m "initial import"
