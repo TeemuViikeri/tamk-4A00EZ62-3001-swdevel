@@ -10,7 +10,7 @@
     2. Setup Git 
         a) set up identity (username and email address): git config --global user.name "John Doe" & git config --global user.email johndoe@example.com
         b) set up editor you want to use with Git: git config --global core.editor emacs
-    3. Initialize a git repository to an existing directory with git --init
+    3. Initialize a git repository to an existing directory with git init
        OR
        Clone an existing repository with git clone <url>
     4. Start commiting
@@ -35,7 +35,7 @@
 
     C. Add coupe of aliases to configuration file to use git more
         easily. Define following aliases:
-
+    
         b  = branch | git config --global alias.b  branch
         ci = commit | git config --global alias.ci  commit
         co = checkout | git config --global alias.co  checkout
