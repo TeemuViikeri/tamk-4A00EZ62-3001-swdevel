@@ -1,0 +1,17 @@
+3.4 Git index
+
+    What is it? How does it work? Do following:
+
+    Git index is a stating area where you can add changed filex to be prepared
+    to commit into their correspongind repository. You can also remove files from index
+    if you change your mind about adding file to the index. 
+
+    A. Add file with "git add". Oooops. That was a mistake.
+        Unadd the file (i.e take action out of INDEX).
+
+    git restore --staged <file>
+
+    B. remove a file with "git rm".  That was a mistake.
+        Unremove the file (i.e take action out of INDEX).
+
+    git rm --cached <file>
