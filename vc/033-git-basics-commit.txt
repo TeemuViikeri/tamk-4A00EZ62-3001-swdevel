@@ -1,0 +1,38 @@
+3.3 Git and commits
+
+    Follow the format of official "Git commit rules" of for each
+    commit you make. See homepage 2.1
+
+    Use a *.java file to do real development to modify and to
+    create new methods.
+
+    Make at least 10 commits of following types:
+
+    - Single commit changes. Change one file over and over.
+
+    Repeat 10 times:
+    nano Program.java --> edit --> C-o (save file) --> C-x (exit Nano)
+    git add Program.java
+    git commit -m <message> or git commit (depenging on the commit content)
+
+    - Change sets. Make a LOGICAL change that requires changing
+      multiple files at once. Like renaming a method from A to B
+      in several files. Commit this as ONE logical commit.
+
+    1. nano Class1.java: create a method that generates a random integer and returns it --> commit
+    2. nano Class2.java: create a method which uses that Class1 method --> commit
+    3. nano Program.java: use both classes inside main() --> commit
+    4. nano Class1.java: change previously created method so it includes a parameter (upperbound)
+    5. nano Class2.java: change Class1's method to match the parameter change
+    6. nano Program.java: change Class1's method to match the parameter change
+    7. commit
+
+    Understand what is the difference of logical commit and
+    single commit and when to use them.
+
+    Single commit is used when there is a single change that is contained only to the changed file and the place
+    where the change was made.
+
+    Logical commit is used when a change that is made connects straightforwardly to other files and places also
+    so that those files need to be changed as well. That way single logical commit should include all the changes
+    made in all of those files.
