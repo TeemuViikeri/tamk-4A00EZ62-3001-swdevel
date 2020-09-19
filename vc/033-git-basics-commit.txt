@@ -25,7 +25,7 @@
     4. nano Class1.java: change previously created method so it includes a parameter (upperbound)
     5. nano Class2.java: change Class1's method to match the parameter change
     6. nano Program.java: change Class1's method to match the parameter change
-    7. commit
+    7. add -A, commit
 
     Understand what is the difference of logical commit and
     single commit and when to use them.
