@@ -1,0 +1,18 @@
+3.6 Git branches and creating them
+
+    Branch from "devel" to "feature-1", commit to "feature-1" and
+    merge changes back to "devel".
+
+                                    merge
+        master: o -- o             *
+                      \           /
+        devel:         o -- o -- o
+
+    git checkout devel
+    git branch feature-1
+    git checkout feature-1
+    <make changes...>
+    git add <file>
+    git commit -m <message>
+    git checkout devel
+    git merge feature-1
