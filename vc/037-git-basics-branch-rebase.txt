@@ -1,0 +1,41 @@
+3.7 Git branches and rebase
+
+    What does "rebasing a branch" mean? Demonstrate this in
+    your repository.
+
+        [BEFORE REBASE]
+
+        master: o -- o -- o -- *
+                      \
+        devel:         o -- o -- o
+
+        [AFTER REBASE]
+
+        master: o -- o -- o -- *
+                                \
+        devel:                   o -- o -- o
+
+    
+    Rebasing a branch means that you move commits from an existing branch
+    to a new base in another branch. This makes it seem like the original branch
+    doesn't exist and the branch starts from the desired base (commit, i.e. in "master").
+    But in reality, the original branch does still exist but Git reapplies the original commits in the original branch
+    and moves those commits to the wanted branch.
+
+    <starts in "master", both branches are same>
+    git checkout devel
+    <make a change>
+    git add <file>
+    git commit -m "Make a change to <file>."
+    <make a change>
+    git add <file>
+    git commit -m "Make a change to <file>."
+    git checkout master
+    <make a change>
+    git add <file>
+    git commit -m "Make a change to <file>."
+    <make a change>
+    git add <file>
+    git commit -m "Make a change to <file>."
+    git checkout devel
+    git rebase master
