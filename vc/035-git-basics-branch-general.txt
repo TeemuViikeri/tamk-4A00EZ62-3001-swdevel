@@ -1,0 +1,22 @@
+3.5 Git branches in general
+
+    Learn to understand what is "master", what is "devel" and what
+    are the "feature branches". This is the core of Git
+    development. See lectures and:
+    http://nvie.com/posts/a-successful-git-branching-model/
+
+    
+
+    A. What command shows the branch you're currently on?
+
+    git branch --show-current
+
+    B. Clone "master" to "devel". Why don't you want to
+        work in master?
+
+    git branch devel
+
+    You don't want to work in "master" because it reserved for a build that is in a production-ready state.
+    Worked source code is located in "devel" which is then merged to "master" when "devel" is in a state
+    which is production-ready. Feature branches are created from devel and merged back to devel when the single
+    feature is ready.
