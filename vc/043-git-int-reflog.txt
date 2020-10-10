@@ -1,0 +1,35 @@
+4.3 Git reflog
+
+    A. What is a reflog? How do you list it?
+
+    Git keeps track of changes made to the tip of branches using reference logs aka "reflogs".
+    Using this reflog in Git, you can list these reference logs in your terminal and use them.
+
+    git reflog
+
+    B. Add file. Commit it. Add another file. commit it.
+        Ooops those were mistakes. use reflog to find your COMMIT
+        that was before TWO ADDS and reset your repository to this
+        point.
+
+    <add file>
+    git add <file>
+    git commit -m <message>
+    <add file>
+    git add <file>
+    git commit -m <message>
+    git reflog
+    <take commit before additions>
+    git reset --hard <commit>
+
+    C. Hmm, on the other hand -- you want to keep those two new
+        ADDED FILE. Use reflog to locate the last commit and
+        reset your repository to COMMIT that includes the TWO
+        files.
+
+    Reflog is a powerful thing. Don't get too exited or you get
+    tangled up!
+
+    git reflog
+    <take commit after two added files>
+    git reset --hard <commit>
