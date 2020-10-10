@@ -1,0 +1,25 @@
+4.2 Git diff and cherry picking
+
+    Branches are used to isolate work.
+
+    A. Make a branch. Make two commits. Take a diff
+        between master and your current work in branch.
+
+    git diff master..temp-branch
+
+    B. Make a documentation change in a branch.
+        Cherry pick this individual commit to "master".
+
+        Learn and understand what "cherry picking" means in regards
+        to merging a branch.
+
+    <create /doc folder> 
+    <create doc.txt file>
+    git add -A
+    git commit -m <message>
+    git checkout/switch master
+    git cherry-pick <commit>
+
+    Cherry picking is like rebase but with single commits. You take commits from an other branch and 
+    create a new commit to the current branch. It's better to use cherry picking when there are lots of commits
+    in a branch but you just want to integrate couple of them and not the whole branch with its commits.
