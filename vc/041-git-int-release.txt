@@ -1,0 +1,22 @@
+4.1 Make release
+
+    When the code is tested and ready to be published, it is
+    marked with a release tag. See lecture
+    http://home.tamk.fi/~jaalto/course/vc/lect/git/#tagging_files
+
+    A. tag your repository as "release/1.0.0"
+
+    <in master>
+    git tag (use option -a to annotate a tag) release/1.0.0 (use option -m to specify tagging message when annotating a tag)
+
+    B. How do you list existing tags?
+
+    git tag (with optional -l or --list, mandatory when using a wildcard pattern)
+
+    C. How do you know the particular tag's commit HASH?
+
+    git show <tag>
+
+    D. Take a diff between last release TAG and 2 commits backward.
+
+    git diff <last release tag> (i.e. "release/1.0.0") HEAD~2
