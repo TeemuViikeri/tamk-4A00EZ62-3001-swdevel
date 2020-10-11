@@ -1,0 +1,15 @@
+5.3 Hg and commits
+
+    Use a *.java file to do real development to modify and to
+    create new methods.
+
+    Make at least 10 commits of following types:
+
+    - Single commit changes. Change one file over and over.
+
+    - Change sets. Make a LOGICAL change that requires changing
+      multiple files at once. Like renaming a method from A to B
+      in several files. Commit this as ONE logical commit.
+
+    cd /src
+    repeat 10 times: <make change(s) to *.java file(s)> & hg commit -m <message>
