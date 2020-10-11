@@ -41,10 +41,11 @@ For the exercises:
     mkdir -p ~/repository/svn-exercise
     mkdir -p ~/tmp/svn/projects
     cd ~/repository/svn-exercise
-    svnadmin create --fs-type fsfs SERVER
+    svnadmin create --fs-type fsfs <server>
     cd ~/tmp/svn/projects
     mkdir test
     cd test
-    svn import -m "Initial import" . file:///$HOME/repository/svn-exercise/SERVER/
+    mkdir branches trunk tags
+    svn import -m "Initial import" . file:///$HOME/repository/svn-exercise/<server>/
     
 
