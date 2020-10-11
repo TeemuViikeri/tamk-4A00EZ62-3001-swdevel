@@ -1,0 +1,36 @@
+6.2 Import project to SERVER
+
+    On the CLIENT, start adding files to the project and make
+    structure look like this initially:
+
+    test/
+    |
+    +-- src
+    |   Test.java
+    |
+    +-- doc
+    |   document.rtf
+    |
+    +-- homepage
+        | index.html
+        |
+        +-- pic/
+            picture.jpg
+
+    Import *whole* project as a lump.
+
+    - Add all files
+    - commit
+
+    Use real files: rtf, jpg, create web page index.html etc.
+
+    Recall Svn lecture about "4.3 Handling of binary files" if
+    you need to do anything special.
+    
+    svn co file:///$HOME/repository/svn-exercise/repo.svn/ test.svn
+    cd test.svn/trunk/
+    <make file structure>
+    svn add src
+    svn add doc
+    svn add homepage
+    svn ci -m <message>
