@@ -1,0 +1,26 @@
+5.5 Hg and clone
+
+    Make a clone of existing repository.
+
+    cd project.hg
+    hg clone . project-temp.hg 
+
+    A. Make changes in clone.
+
+    cd project-temp.hg
+    <make changes>
+    hg ci -m <message>
+    cd .. (to project-temp.hg)
+
+    B. Merge changes back to master repository.
+    
+    cd ../project.hg
+    hg incoming -p ../project-temp.hg/  || check what you are pulling
+    hg pull ../project-temp.hg/         || pull changes
+    hg update                           || pull doesn't do the merging yet, only fetching, update will the merge.
+
+    Make sure you understand that a clone command is the correct
+    way in Hg to make a "branch". You don't _EVER_ want to use the
+    hg's internal "branch" command! Recall Hg workflow and branch
+    documentation from Hg's manual to really *understand* why this
+    is so.
