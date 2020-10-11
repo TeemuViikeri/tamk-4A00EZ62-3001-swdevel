@@ -1,0 +1,21 @@
+5.4 Hg and diff
+
+    Display a diff between previous N-1 and current N commit of
+    some file in the project. Give command and display result
+    (copy/paste).
+
+    diff -r 08ae06d269af -r 2fa8ddaf80a0 src/Class2.java
+    --- a/src/Class2.java   Sun Oct 11 10:51:33 2020 +0300
+    +++ b/src/Class2.java   Sun Oct 11 10:53:00 2020 +0300
+    @@ -1,7 +1,7 @@
+    public class Class2 {
+        public void info(String name, int age) {
+            Class1 personal = new Class1();
+    -        personal.printName(name);
+    -        personal.printAge(age);
+    +        personal.name(name);
+    +        personal.age(age);
+        }
+    }
+
+
