@@ -1,0 +1,26 @@
+5.2 Import a project into Hg
+
+    Create project and import it into repository as
+    a *one* commit.
+
+    project.hg/
+    |
+    +-- doc/
+    |   doc.txt
+    |   test.rtf
+    |
+    +-- src/
+    |    Program.java       Uses Class1, Class2
+    |    Class1.java
+    |    Class2.java
+    |
+    +-- web/                Web pages of project
+        | index.html
+        +-- pic/
+            image.jpg
+
+    <create project structure>
+    cd project.hg
+    hg init
+    hg addremove
+    hg commit -m "Initial import."
