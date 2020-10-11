@@ -1,0 +1,50 @@
+http://svnbook.red-bean.com
+
+Svn is centralized version control system. It is based on
+client-server architecture and needsa separate SERVER for live
+operation over Internet,
+
+Make sure you understand the default repository setup at the SERVER:
+
+project/
+|
++- branches/  || contains branch copies
+|
++- trunk/     || main line of development
+|
++- tags/      || contains tag copies
+
+Recall lectures what is the purpose of each directory. This
+is key to understanding Svn.
+
+For the exercises:
+
+- SERVER location is $HOME/repository/svn-exercise
+- CLIENT location is $HOME/tmp/svn/projects
+
+6.1 Initialize
+
+    On the SERVER, initialize repository. On the CLIENT import an
+    empty project directory named "test" into the SERVER space.
+    Your SERVER will now have a repository:
+
+    svn-exercise
+    |
+    +-- test/
+        |
+        +- branches/
+        |
+        +- trunk/
+        |
+        +- tags/
+
+    mkdir -p ~/repository/svn-exercise
+    mkdir -p ~/tmp/svn/projects
+    cd ~/repository/svn-exercise
+    svnadmin create --fs-type fsfs SERVER
+    cd ~/tmp/svn/projects
+    mkdir test
+    cd test
+    svn import -m "Initial import" . file:///$HOME/repository/svn-exercise/SERVER/
+    
+
