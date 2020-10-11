@@ -1,0 +1,30 @@
+5.1 Starting Hg
+
+    http://hgbook.red-bean.com
+
+    Explain what is need to get started with Hg.
+
+    1. You need to download Mercurial
+    2. After that you should configurate Mercurial configuration file to know who you are
+    3. You can work on an existing Mercurial project by cloning an existing repository with "hg clone <url>"
+       OR
+       You can start new Mercurial with "hg init"
+
+    A: How do you set your identity?
+
+    Add the following to the Mercurial configuration file:  
+    [ui]
+    username = John Doe <john@example.com>
+
+    B. Where is the configuration file?
+
+    ~/.hgrc (Unix) OR %USERPROFILE%\Mercurial.ini (Windows)
+
+    C. Give 2 example what can be written to configuration file
+
+    [alias]
+    latest = log --limit 5 || creates a "latest" alias for log --limit 5
+
+    [defaults]
+    log = -v || "log" command uses -v (verbose) option by default
+
