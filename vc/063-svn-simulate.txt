@@ -1,0 +1,36 @@
+6.3 Simulate two developers
+
+    Check out the project (that was imported in previous step) to
+    a another, separate, location:
+
+        $HOME/tmp/svn/projects/test2
+
+    You should how have the same project in *two* locations:
+
+    $HOME/tmp/svn/projects/
+    |
+    +-- test/
+    |
+    +-- test2/
+
+    Work in both directories:
+
+    - Make changes & commit
+    - Switch to other directory;
++ remember to download updates from central repository!
++ Make changes and commit
+    ... repeat several times ...
+
+    Create test2:
+    cd $HOME/tmp/svn/projects/
+    mkdir test2
+    cd test2
+    svn co file:///$HOME/repository/svn-exercise/repo.svn/ test2.svn
+    cd test2/trunk
+
+    Work in both directories:
+    <make changes>
+    svn ci -m <message>
+    cd ~/tmp/svn/projects/test/test.svn/trunk OR ~/tmp/svn/projects/test2/test2.svn/trunk
+    svn up
+    <repeat several times>
