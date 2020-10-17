@@ -1,31 +1,26 @@
-5.2 Convert lower to uppercase. Or vice versa. Detect which way.
+#! /usr/bin/perl
 
-    abc             -> ABC
-    ABC             -> abc
+use strict;
+use warnings;
 
-    #! /usr/bin/perl
+use English;
 
-    use strict;
-    use warnings;
+sub convertCase($) {
+    my $str = $ARG[0];
 
-    use English;
-
-    sub convertCase($) {
-        my $str = $ARG[0];
-
-        if ( $str =~ m/^[A-Z]+$/g ) {
-            print lc $str;
-        } elsif ( $str =~ m/^[a-z]+$/g ) {
-            print uc $str;
-        } else {
-            print "Parameter wasn't valid.";
-        }
+    if ( $str =~ m/^[A-Z]+$/g ) {
+        print lc $str;
+    } elsif ( $str =~ m/^[a-z]+$/g ) {
+        print uc $str;
+    } else {
+        print "Parameter wasn't valid.";
     }
+}
 
-    sub main() {
-        convertCase("Abc");
-    }
+sub main() {
+    convertCase("Abc");
+}
 
-    main();
+main();
 
-    __END__
+__END__

@@ -1,27 +1,23 @@
-2.1 Display "Hello World" and your name
+#! /usr/bin/perl
 
-    Output information using as many variables as possible.
+use strict;
+use warnings;
 
-    #! /usr/bin/perl
+use English;
 
-    use strict;
-    use warnings;
+sub hello() {
+    my $hello = 'Hello';
+    my $world = 'World';
+    my $firstname = 'Teemu';
+    my $lastname = 'Viikeri';
 
-    use English;
+    print "$hello $world by $firstname $lastname";
+}
 
-    sub hello() {
-        my $hello = 'Hello';
-        my $world = 'World';
-        my $firstname = 'Teemu';
-        my $lastname = 'Viikeri';
+sub main() {
+    hello();
+}
 
-        print "$hello $world by $firstname $lastname";
-    }
+main();
 
-    sub main() {
-        hello();
-    }
-
-    main();
-    
-    __END__
+__END__

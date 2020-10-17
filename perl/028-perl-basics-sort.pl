@@ -1,28 +1,20 @@
-2.8 Arrays
+#! /usr/bin/perl
 
-    Diplay values from high to low: (4, 1, 3, 2). Hint: you need to
-    sort the array.
+use strict;
+use warnings;
 
-    https://perldoc.perl.org/perldata.html
-    https://perldoc.perl.org/perlfaq4.html#Data%3a-Arrays
+use English;
 
-    #! /usr/bin/perl
+sub highToLow() {
+    my @values = (4, 1, 3, 2);
+    my @sorted = sort { $b cmp $a } @values;
+    print ("@sorted", "\n");
+}
 
-    use strict;
-    use warnings;
+sub main() {
+    highToLow();
+}
 
-    use English;
+main();
 
-    sub highToLow() {
-        my @values = (4, 1, 3, 2);
-        my @sorted = sort { $b cmp $a } @values;
-        print ("@sorted", "\n");
-    }
-
-    sub main() {
-        highToLow();
-    }
-
-    main();
-
-    __END__
+__END__

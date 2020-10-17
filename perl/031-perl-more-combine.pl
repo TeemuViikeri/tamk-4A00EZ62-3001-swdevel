@@ -1,39 +1,28 @@
-3.1 Array combine
+#! /usr/bin/perl
 
-    Write a program that adds any two lists together producing new list
-    that contains *unique* values from each list. _Note:_ the order of
-    the values in result list does not matter.
+use strict;
+use warnings;
 
-        @a = qw(1 2 3);
-        @b = qw(2 3 4 5);
+use English;
 
-        => Combining @a and @b produces: (1, 2, 3, 4, 5)
+sub combine() {
+    my @a = qw(1 2 3);
+    my @b = qw(2 3 4 5);
 
-    #! /usr/bin/perl
+    # create an empty hash for keys -- remember that there can be only unique keys
+    my %seen;
+    # populate hash with keys that are @a values -- keys have no values
+    @seen{@a} = ();
+    # first add @a to @combined, then add @b values to @combined if grep returns true
+    my @combined = (@a, grep { !exists $seen{$ARG} } @b);
 
-    use strict;
-    use warnings;
+    print @combined;
+}
 
-    use English;
+sub main() {
+    combine();
+}
 
-    sub combine() {
-        my @a = qw(1 2 3);
-        my @b = qw(2 3 4 5);
+main();
 
-        # create an empty hash for keys -- remember that there can be only unique keys
-        my %seen;
-        # populate hash with keys that are @a values -- keys have no values
-        @seen{@a} = ();
-        # first add @a to @combined, then add @b values to @combined if grep returns true
-        my @combined = (@a, grep { !exists $seen{$ARG} } @b);
-
-        print @combined;
-    }
-
-    sub main() {
-        combine();
-    }
-
-    main();
-
-    __END__
+__END__

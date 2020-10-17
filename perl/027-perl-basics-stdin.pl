@@ -1,39 +1,29 @@
-2.7 Arrays
+#! /usr/bin/perl
 
-    Read values from STDIN user and store them into array. If
-    input read "quit", stop reading and display current contents
-    of the array.
+use strict;
+use warnings;
 
-    References:
-    https://perldoc.perl.org/perldata.html
-    https://perldoc.perl.org/perlfaq4.html#Data%3a-Arrays
+use English;
 
-    #! /usr/bin/perl
+sub readAndStore() {
+    my @values = ();
+    print "Give me some words:\n";
 
-    use strict;
-    use warnings;
-
-    use English;
-
-    sub readAndStore() {
-        my @values = ();
-        print "Give me some words:\n";
-
-        while (<>) {
-            if ($ARG eq "quit\n") {
-                last;
-            }
-
-            push @values, $ARG;
+    while (<>) {
+        if ($ARG eq "quit\n") {
+            last;
         }
 
-        print @values;
+        push @values, $ARG;
     }
 
-    sub main() {
-        readAndStore();
-    }
+    print @values;
+}
 
-    main();
+sub main() {
+    readAndStore();
+}
 
-    __END__
+main();
+
+__END__

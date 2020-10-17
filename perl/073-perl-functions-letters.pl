@@ -1,55 +1,36 @@
-7.3 Write function to return letter K, M, G, T based on size
+#! /usr/bin/perl
 
-    Return the binary size with one decimal precision; rounded to
-    nearest value.
+use strict;
+use warnings;
 
-    # See https://en.wikipedia.org/wiki/Binary_prefix
-    $size = sizeTypeBinary(1024);      # returns "1.0 KiB"
-    $size = sizeTypeBinary(2100);      # returns "2.1 KiB"
-    $size = sizeTypeBinary(2_800_000); # returns "2.7 MiB"
+use English;
 
-    #! /usr/bin/perl
+sub sizeTypeBinary($) {
+    my $bytes = $ARG[0];
+    my $letter;
 
-    use strict;
-    use warnings;
-
-    use English;
-
-    sub sizeTypeBinary($) {
-        my $bytes = $ARG[0];
-        my $letter;
-
-        if ( $bytes >= 1_000_000_000_000 ) {
-            $bytes /= 1_000_000_000_000;
-            $letter = "T";
-        } elsif ( $bytes >= 1_000_000_000 ) {
-            $bytes /= 1_000_000_000;
-            $letter = "G";
-        } elsif ( $bytes >= 1_000_000 ) {
-            $bytes /= 1_000_000;
-            $letter = "M";
-        }  elsif ( $bytes >= 1_000 ) {
-            $bytes /= 1000;
-            $letter = "K";
-        }
-
-        return sprintf "%.1f %siB", "$bytes", "$letter";
+    if ( $bytes >= 1_000_000_000_000 ) {
+        $bytes /= 1_000_000_000_000;
+        $letter = "T";
+    } elsif ( $bytes >= 1_000_000_000 ) {
+        $bytes /= 1_000_000_000;
+        $letter = "G";
+    } elsif ( $bytes >= 1_000_000 ) {
+        $bytes /= 1_000_000;
+        $letter = "M";
+    }  elsif ( $bytes >= 1_000 ) {
+        $bytes /= 1000;
+        $letter = "K";
     }
 
-    sub main() {
-        my $size = sizeTypeBinary(1024);
-        print $size;
-    }
+    return sprintf "%.1f %siB", "$bytes", "$letter";
+}
 
-    main();
+sub main() {
+    my $size = sizeTypeBinary(1024);
+    print $size;
+}
 
-    __END__
-    7.3 Write function to return letter K, M, G, T based on size
+main();
 
-        Return the binary size with one decimal precision; rounded to
-        nearest value.
-
-        # See https://en.wikipedia.org/wiki/Binary_prefix
-        $size = sizeTypeBinary(1024);      # returns "1.0 KiB"
-        $size = sizeTypeBinary(2100);      # returns "2.1 KiB"
-        $size = sizeTypeBinary(2_800_000); # returns "2.7 MiB"
+__END__

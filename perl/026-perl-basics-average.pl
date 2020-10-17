@@ -1,30 +1,26 @@
-2.6 Arrays
+#! /usr/bin/perl
 
-    Store values 1, 2, 3, in an array. Calculate average.
+use strict;
+use warnings;
 
-    #! /usr/bin/perl
+use English;
 
-    use strict;
-    use warnings;
+sub average() {
+    my @values = (1, 2, 3);
+    my $sum;
 
-    use English;
-
-    sub average() {
-        my @values = (1, 2, 3);
-        my $sum;
-
-        for ( @values ) {
-            $sum += $ARG;
-        }
-
-        my $avg = $sum / scalar @values;
-        print $avg;
+    for ( @values ) {
+        $sum += $ARG;
     }
 
-    sub main() {
-        average();
-    }
+    my $avg = $sum / scalar @values;
+    print $avg;
+}
 
-    main();
+sub main() {
+    average();
+}
 
-    __END__
+main();
+
+__END__

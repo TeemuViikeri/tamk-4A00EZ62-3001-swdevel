@@ -1,52 +1,39 @@
-3.3 Hash and roman numerals
+#! /usr/bin/perl
 
-    Write a program to *convert* decimal number to a ROMAN numeral.
-    Conversion range is 0..20 (decimal)
+use strict;
+use warnings;
 
-        3   => III
-        5   => V
+use English;
 
-    Roman numerals in range 1-20 are:
+sub convertToRomans() {
+    my @arabic = (1..20);
+    my @romans = qw(
+        I II III IV V
+        VI VII VIII IX X
+        XI XII XIII XIV XV
+        XVI XVII XVIII XIX XX
+    );
 
-        I II III IV V VI VII VIII IX
-        X XI XII XIII XIV .. XX
+    my %arabic_romans;
+    @arabic_romans{@arabic} = @romans;
 
-    #! /usr/bin/perl
+    while (<>) {
+        chomp;
+        my $key = $ARG;
 
-    use strict;
-    use warnings;
-
-    use English;
-
-    sub convertToRomans() {
-        my @arabic = (1..20);
-        my @romans = qw(
-            I II III IV V
-            VI VII VIII IX X
-            XI XII XIII XIV XV
-            XVI XVII XVIII XIX XX
-        );
-
-        my %arabic_romans;
-        @arabic_romans{@arabic} = @romans;
-
-        while (<>) {
-            chomp;
-            my $key = $ARG;
-
-            if ($key < 1 or $key > 20) {
-                print "Given number wasn't in range from 1 to 20.";
-                last;
-            }
-
-            print $arabic_romans{$key} . "\n";
+        if ($key < 1 or $key > 20) {
+            print "Given number wasn't in range from 1 to 20.";
+            last;
         }
+
+        print $arabic_romans{$key} . "\n";
     }
+}
 
-    sub main() {
-        convertToRomans();
-    }
+sub main() {
+    convertToRomans();
+}
 
-    main();
+main();
 
-    __END__
+__END__

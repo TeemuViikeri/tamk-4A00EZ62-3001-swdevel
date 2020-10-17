@@ -1,83 +1,62 @@
-6.1 Use only IF statement to display values in correct order
+#! /usr/bin/perl
 
-    Store three values to variables. You are not allowed to use
-    any *arrays* datatypes or *sort* methods to solve the problem.
+use strict;
+use warnings;
 
-        $a = 3
-        $b = 1
-        $c = 2
+use English;
 
-        <code to output values in order: 1, 2, 3>
+sub displayInOrder() {
+    my $a = 3;
+    my $b = 1;
+    my $c = 2;
 
-    #! /usr/bin/perl
+    my $first;
+    my $second;
+    my $third;
 
-    use strict;
-    use warnings;
+    if ( $a < $b and $a < $c ) {
+        $first = $a;
 
-    use English;
-
-    sub displayInOrder() {
-        my $a = 3;
-        my $b = 1;
-        my $c = 2;
-
-        my $first;
-        my $second;
-        my $third;
-
-        if ( $a < $b and $a < $c ) {
-            $first = $a;
-
-            if ( $b < $c ) {
-                $second = $b;
-                $third = $c;
-            } else {
-                $second = $c;
-                $third = $b;
-            }
+        if ( $b < $c ) {
+            $second = $b;
+            $third = $c;
+        } else {
+            $second = $c;
+            $third = $b;
         }
-
-        if ( $b < $a and $b < $c ) {
-            $first = $b;
-
-            if ( $a < $c ) {
-                $second = $a;
-                $third = $c;
-            } else {
-                $second = $c;
-                $third = $a;
-            }
-        }
-
-        if ( $c < $a and $c < $b ) {
-            $first = $c;
-
-            if ( $a < $b ) {
-                $second = $a;
-                $third = $b;
-            } else {
-                $second = $b;
-                $third = $a;
-            }
-        }
-
-        print "$first, $second, $third";
     }
 
-    sub main() {
-        displayInOrder();
+    if ( $b < $a and $b < $c ) {
+        $first = $b;
+
+        if ( $a < $c ) {
+            $second = $a;
+            $third = $c;
+        } else {
+            $second = $c;
+            $third = $a;
+        }
     }
 
-    main();
+    if ( $c < $a and $c < $b ) {
+        $first = $c;
 
-    __END__
-    6.1 Use only IF statement to display values in correct order
+        if ( $a < $b ) {
+            $second = $a;
+            $third = $b;
+        } else {
+            $second = $b;
+            $third = $a;
+        }
+    }
 
-        Store three values to variables. You are not allowed to use
-        any *arrays* datatypes or *sort* methods to solve the problem.
+    print "$first, $second, $third";
+}
 
-            $a = 3
-            $b = 1
-            $c = 2
+sub main() {
+    displayInOrder();
+}
 
-            <code to output values in order: 1, 2, 3>
+main();
+
+__END__

@@ -1,24 +1,21 @@
-7.4 Write function to calculate arithmetic sum 1+..N; 1 + 2 + 3 + .. N
+#! /usr/bin/perl
 
-    #! /usr/bin/perl
+use strict;
+use warnings;
 
-    use strict;
-    use warnings;
+use English;
 
-    use English;
+sub oneToN($) {
+    # n(n+1)/2
+    my $n = $ARG[0];
+    return $n * ( $n + 1 ) / 2;
 
-    sub oneToN($) {
-        # n(n+1)/2
-        my $n = $ARG[0];
-        return $n * ( $n + 1 ) / 2;
+}
 
-    }
+sub main() {
+    print oneToN(10);
+}
 
-    sub main() {
-        print oneToN(10);
-    }
+main();
 
-    main();
-
-    __END__
-    7.4 Write function to calculate arithmetic sum 1+..N; 1 + 2 + 3 + .. N
+__END__

@@ -1,29 +1,23 @@
-4.4 Solve hypotenuse in Pythagora's theorem
+#! /usr/bin/perl
 
-      2   2   2
-      c = a + b
+use strict;
+use warnings;
 
-      #! /usr/bin/perl
+use English;
 
-      use strict;
-      use warnings;
-
-      use English;
-
-      sub solveHypotenusa($ $) {
+sub solveHypotenusa($ $) {
       # a^2 + b^2 = c^2
       my $bottom = $ARG[0] ** 2;
       my $side = $ARG[1] ** 2;
 
       my $hypotenusa = sqrt($bottom + $side);
       print "Hypotenusa is: $hypotenusa";
+}
 
-      }
-
-      sub main() {
+sub main() {
       solveHypotenusa(4, 3);
-      }
+}
 
-      main();
+main();
 
-      __END__
+__END__

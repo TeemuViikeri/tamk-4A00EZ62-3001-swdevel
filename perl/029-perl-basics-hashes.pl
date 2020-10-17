@@ -1,57 +1,41 @@
-2.9 Hashes
+#! /usr/bin/perl
 
-    Store web colors RED, GREEN and BLUE in hex to a hash. Display
-    each color name and corresponding hex and decimal value to the
-    screen.
+use strict;
+use warnings;
 
-    Hint: Store HEX and NAME in hash. During output, split and
-    convert shex value into three deecimals.
+use English;
 
-        RED     FF0000 (255, 0, 0)
-        GREEN   00FF00 (0, 255, 0)
-        BLUE    0000FF (0, 0, 255)
+sub displayColors() {
+    my %colors = ('RED' => 'FF0000',  'GREEN' => '00FF00',  'BLUE' => '0000FF');
 
-    References:
-    https://perldoc.perl.org/perldata.html
+    foreach my $key (keys %colors) {
+        my @dec_values = convertHexToDec($colors{$key});
+        my $r = $dec_values[0];
+        my $g = $dec_values[1];
+        my $b = $dec_values[2];
 
-    #! /usr/bin/perl
+        printf "%-7s %s (%s, %s, %s)\n", "$key", "$colors{$key}", "$r", "$g", "$b";
+    }
+}
 
-    use strict;
-    use warnings;
+sub convertHexToDec($) {
+    my @dec_values;
 
-    use English;
+    my $hex = @ARG[0];
+    my @hex_values = ( $hex =~ m/../g );
 
-    sub displayColors() {
-        my %colors = ('RED' => 'FF0000',  'GREEN' => '00FF00',  'BLUE' => '0000FF');
-
-        foreach my $key (keys %colors) {
-            my @dec_values = convertHexToDec($colors{$key});
-            my $r = $dec_values[0];
-            my $g = $dec_values[1];
-            my $b = $dec_values[2];
-
-            printf "%-7s %s (%s, %s, %s)\n", "$key", "$colors{$key}", "$r", "$g", "$b";
-        }
+    foreach (@hex_values) {
+        my $dec_value = hex $ARG;
+        push @dec_values, $dec_value;
     }
 
-    sub convertHexToDec($) {
-        my @dec_values;
+    return @dec_values;
+}
 
-        my $hex = @ARG[0];
-        my @hex_values = ( $hex =~ m/../g );
+sub main() {
+    displayColors();
+}
 
-        foreach (@hex_values) {
-            my $dec_value = hex $ARG;
-            push @dec_values, $dec_value;
-        }
+main();
 
-        return @dec_values;
-    }
-
-    sub main() {
-        displayColors();
-    }
-
-    main();
-
-    __END__
+__END__

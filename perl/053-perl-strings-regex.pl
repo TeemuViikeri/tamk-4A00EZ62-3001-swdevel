@@ -1,33 +1,26 @@
-5.3 Read user input and detect numbers (regexp exercise)
+#! /usr/bin/perl
 
-    abd             -> Not a number
-    1234            -> Number
-    a213            -> Not a number
-    123a            -> Not a number
+use strict;
+use warnings;
 
-    #! /usr/bin/perl
+use English;
 
-    use strict;
-    use warnings;
+sub detectNumbers() {
+    while (<>) {
+        chomp;
 
-    use English;
-
-    sub detectNumbers() {
-        while (<>) {
-            chomp;
-
-            if ($ARG =~ /^\d+$/) {
-                print "Number\n";
-            } else {
-                print "Not a number\n";
-            }
+        if ($ARG =~ /^\d+$/) {
+            print "Number\n";
+        } else {
+            print "Not a number\n";
         }
     }
+}
 
-    sub main() {
-        detectNumbers();
-    }
+sub main() {
+    detectNumbers();
+}
 
-    main();
+main();
 
-    __END__
+__END__

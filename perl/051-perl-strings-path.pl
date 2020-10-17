@@ -1,24 +1,20 @@
-5.1 Convert path from one format to another:
+#! /usr/bin/perl
 
-    /path/file.txt  -> \path\file.txt
+use strict;
+use warnings;
 
-    #! /usr/bin/perl
+use English;
 
-    use strict;
-    use warnings;
+sub convertPath($) {
+    my $path = $ARG[0];
+    $path =~ tr/\//\\/;
+    print $path;
+}
 
-    use English;
+sub main() {
+    convertPath("/path/file.txt");
+}
 
-    sub convertPath($) {
-        my $path = $ARG[0];
-        $path =~ tr/\//\\/;
-        print $path;
-    }
+main();
 
-    sub main() {
-        convertPath("/path/file.txt");
-    }
-
-    main();
-
-    __END__
+__END__

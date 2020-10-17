@@ -1,17 +1,3 @@
-3.2 Array and types of elements
-
-    Write a program that prints all values from a list and the type of
-    value. Keep the output nicely aligned.
-
-        my @list = ("one", 2, "three", "and more");
-
-        =>
-
-        one        (string)
-        2          (number)
-        three      (string)
-        and more   (string)
-
 #! /usr/bin/perl
 
 use strict;

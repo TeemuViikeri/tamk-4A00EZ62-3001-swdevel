@@ -1,13 +1,3 @@
-5.4 Split a string
-
-    $str = "John,Doe,http://example.com"
-
-    # Display each record (data element) on its own line
-
-    John
-    Doe
-    http://example.com
-
 #! /usr/bin/perl
 
 use strict;
@@ -27,5 +17,3 @@ sub main() {
 main();
 
 __END__
-
-

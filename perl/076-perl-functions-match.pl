@@ -1,35 +1,24 @@
-7.6 Write function to return all matching strings from array
-    (case sensitive)
+#! /usr/bin/perl
 
-    @array = ("a", "b", "a", "a", "b");
-    $matches = search(array, "a");       # returns ("a", "a", "a")
+use strict;
+use warnings;
 
-    #! /usr/bin/perl
+use English;
 
-    use strict;
-    use warnings;
+sub searchAllMatches {
+    my $char = pop(@ARG);
+    my $str = join "", @ARG;
 
-    use English;
+    my @matches = ( $str =~ m/$char/g );
+    return @matches;
+}
 
-    sub searchAllMatches {
-        my $char = pop(@ARG);
-        my $str = join "", @ARG;
+sub main() {
+    my @array = ("a", "b", "a", "a", "b");
+    my @matches = searchAllMatches(@array, "a");
+    print(join(', ', @matches), "\n");
+}
 
-        my @matches = ( $str =~ m/$char/g );
-        return @matches;
-    }
+main();
 
-    sub main() {
-        my @array = ("a", "b", "a", "a", "b");
-        my @matches = searchAllMatches(@array, "a");
-        print(join(', ', @matches), "\n");
-    }
-
-    main();
-
-    __END__
-    7.6 Write function to return all matching strings from array
-        (case sensitive)
-
-        @array = ("a", "b", "a", "a", "b");
-        $matches = search(array, "a");       # returns ("a", "a", "a")
+__END__

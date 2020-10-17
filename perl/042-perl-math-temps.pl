@@ -1,50 +1,44 @@
-4.2 Convert to Fahrenheit or Celcisus based on user input
+#! /usr/bin/perl
 
-    21F => to Celsius
-    31  => to Fahrenheit
-    31C => to Fahrenheit
+use strict;
+use warnings;
 
-    #! /usr/bin/perl
+use English;
 
-    use strict;
-    use warnings;
+sub convertTemperature() {
+    while (<>) {
 
-    use English;
+        chomp;
 
-    sub convertTemperature() {
-        while (<>) {
+        my $temp;
+        my $n;
 
-            chomp;
+        # F to C: (°F − 32) × 5/9 = °C
+        # C to F: (°C × 9/5) + 32 = °F
 
-            my $temp;
-            my $n;
-
-            # F to C: (°F − 32) × 5/9 = °C
-            # C to F: (°C × 9/5) + 32 = °F
-
-            if ( $ARG =~ m/^\d+C$/ ) {
+        if ( $ARG =~ m/^\d+C$/ ) {
+            $n = substr $ARG, 0, -1;
+            $temp = ($n * 9/5) + 32;
+            printf "%.2fC --> %.2fF\n", "$n", "$temp";
+        } elsif ( $ARG =~ m/^\d+F?$/ ) {
+            if ( substr $ARG, 0, -1 eq "F" ) {
                 $n = substr $ARG, 0, -1;
-                $temp = ($n * 9/5) + 32;
-                printf "%.2fC --> %.2fF\n", "$n", "$temp";
-            } elsif ( $ARG =~ m/^\d+F?$/ ) {
-                if ( substr $ARG, 0, -1 eq "F" ) {
-                    $n = substr $ARG, 0, -1;
-                } else {
-                    $n = $ARG;
-                }
-
-                $temp = ($n - 32) * 5/9;
-                printf "%.2fF --> %.2fC\n", "$n", "$temp";
             } else {
-                print "Given temperature was invalid.";
+                $n = $ARG;
             }
+
+            $temp = ($n - 32) * 5/9;
+            printf "%.2fF --> %.2fC\n", "$n", "$temp";
+        } else {
+            print "Given temperature was invalid.";
         }
     }
+}
 
-    sub main() {
-        convertTemperature();
-    }
+sub main() {
+    convertTemperature();
+}
 
-    main();
+main();
 
-    __END__
+__END__

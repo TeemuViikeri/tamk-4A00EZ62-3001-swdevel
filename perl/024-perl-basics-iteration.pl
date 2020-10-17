@@ -1,25 +1,20 @@
-2.4 Iteration
+#! /usr/bin/perl
 
-    Display descending values 9..1 by using iteration (loop of some
-    kind)
+use strict;
+use warnings;
 
-    #! /usr/bin/perl
+use English;
 
-    use strict;
-    use warnings;
-
-    use English;
-
-    sub iterate() {
-        for (reverse 1 .. 9) {
-            print($ARG, "\n");
-        }
+sub iterate() {
+    for (reverse 1 .. 9) {
+        print($ARG, "\n");
     }
+}
 
-    sub main() {
-        iterate();
-    }
+sub main() {
+    iterate();
+}
 
-    main();
+main();
 
-    __END__
+__END__

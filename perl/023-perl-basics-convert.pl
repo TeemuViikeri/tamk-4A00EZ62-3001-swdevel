@@ -1,22 +1,18 @@
-2.3 Convert floating point to plain integer
+#! /usr/bin/perl
 
-    01.54 -> 1
+use strict;
+use warnings;
 
-    #! /usr/bin/perl
+use English;
 
-    use strict;
-    use warnings;
+sub convert($){
+    printf "%d", @ARG;
+}
 
-    use English;
+sub main() {
+    convert(1.54);
+}
 
-    sub convert($){
-        printf "%d", @ARG;
-    }
+main();
 
-    sub main() {
-        convert(1.54);
-    }
-
-    main();
-
-    __END__
+__END__

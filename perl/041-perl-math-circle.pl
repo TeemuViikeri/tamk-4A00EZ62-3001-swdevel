@@ -1,26 +1,21 @@
-4.1 Calculate area of an circle
+#! /usr/bin/perl
 
-    $radius = 5.5;
+use strict;
+use warnings;
 
+use English;
+use Math::Trig q(pi);
 
-    #! /usr/bin/perl
+sub calculateCircleArea($) {
+    # A = PI * r^2
+    my $area = sprintf("Area: %.2f", pi * $ARG[0] ** 2);
+    print $area;
+}
 
-    use strict;
-    use warnings;
+sub main() {
+    calculateCircleArea(5.5);
+}
 
-    use English;
-    use Math::Trig q(pi);
+main();
 
-    sub calculateCircleArea($) {
-        # A = PI * r^2
-        my $area = sprintf("Area: %.2f", pi * $ARG[0] ** 2);
-        print $area;
-    }
-
-    sub main() {
-        calculateCircleArea(5.5);
-    }
-
-    main();
-
-    __END__
+__END__

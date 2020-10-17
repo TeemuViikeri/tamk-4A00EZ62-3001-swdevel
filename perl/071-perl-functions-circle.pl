@@ -1,5 +1,3 @@
-7.1 Write function to calculate area of a Circle
-
 #! /usr/bin/perl
 
 use strict;
